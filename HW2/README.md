@@ -123,3 +123,15 @@ $("#hidden-containter").show();
 ```
 
 ## Validation 
+
+1. Since this was an user input form, I wanted to make sure that the code doesn't break if the user adds a faulty number. 
+
+2. I made sure that I set a limit for all the unrealistic numbers that may be input by the user, by using min and max value.
+
+```bash
+<div class="form-group">
+      <label for="repetition">Number of Repetition:</label>
+      <input type="number" class="form-control" id="repetition" placeholder="Enter the Number of Repetition" min="1" max="15" required>
+    </div>
+
+```
