@@ -44,4 +44,82 @@ This is my second assignment for this class. For this assignement I needed to fi
 
 ## Javascript and jQuery
 
+1. Javascript is used in web pages, and it allows a certain action or "event" to occur based on the actions of the user. For this assignment, I used it to obtain user information from the form, and calculated the information and present the result to the page. 
+
+2. For this this assignment, we were required to use the JavaScript library, jQuery. jQuery is a fast, small, and feature-rich JavaScript library. As we see in the code snippet below the $() defines and accesses jQuery and performs the actions to the elements.
+
+3. First procedure was to add the link to my script file onto the HTML file (since I decided to do a seperate file for JavaScript).
+
+```bash
+<!-- Own Javascript -->
+ <script type="text/javascript" src="script.js"></script>    
+ ```
+
+ 4. I used the .ready() function to make sure that the page was properly loaded and ready for the user input, and nested my functions in there. 
+
+ ```bash
+  $(document).ready(function(){
+
+  	//code omitted
+
+  });
+  ```
+
+ 5. For the form submittion and retrieving the information from the page, I used the .submit() function. This function allows the input information to be retreived once the user hits the button, and assigns the inputs to local variables in order to do some calculation with them. 
+ 
+ ```bash
+  $('#myForm').submit(function(e){
+          e.preventDefault();
+
+          //Takes in all the inputs from the form and assigns it so we can do some calculation with it
+          var b_weight = $('#body-weight').val();
+          var w_lifted = $('#weight-lifted').val();
+          var rep = $('#repetition').val();
+
+          });
+ ```
+
+6. With the variables that I grabbed from the user, I input the numbers in the formula that I retreived from the NCSA page which calculates the 1RM number.
+
+```bash
+var ans = w_lifted / (1.0278 - (0.0278 * rep));
+var round = Math.ceil(ans);
+```
+
+7. After the numbers have been calculated, it shows it on the page. I used jQuery to modify and add to the DOM and display the result using the .append() function. The page shows what the user has input, the calculated numbers, and a word of advice. 
+
+```bash
+//Appends the user inputs
+$('#input-table').append("<tr><th>Data Entered:</th></tr>");
+$('#input-table').append("<tr><td>BodyWeight: " + b_weight + "lbs.</td></tr>");
+$('#input-table').append("<tr><td>WeightLifted: " + w_lifted + "lbs.</td></tr>");
+$('#input-table').append("<tr><td>Repetition: " + rep + "</td></tr>");
+```
+
+```bash
+//Based off of the calculation, it will give you your 1RM and a word of advice
+if(round < b_weight){
+    $('#summary').append("<li>You are a beginner and your estimated max is: " + round + "lbs.</li>");
+    $('#summary').append("<li>You are still at a position where linear progression would be work the best, make sure to increase the workload every traning session.</li>");
+          }
+else if(round > b_weight && round < (b_weight*2) ){
+    $('#summary').append("<li>You are an intermediate lifter and your estimated max is: " + round + "lbs.</li>");
+    $('#summary').append("<li>At this level, linear progression becomes tough, its time to move on to proper programming.</li>");
+          }
+else {
+    $('#summary').append("<li>You are an advanced lifter and your estimated max is: " + round  + 'lbs.</li>');
+    $('#summary').append("<li>Make sure to focus on the three main movements (bench, deadlift, squat), and keep the accessory movements minimal.</li>");
+          }
+```
+
+8. Last but not least was the usage of the show and hide method. Since I put both the form and the result in containers, it was easy for me to make either one disappear or show. After the form has been submitted, the form container is hidden, and the result container is shown.  
+
+```bash
+//Let's hide the form so we can make space to place result
+$("#myForm").hide();
+
+//This will show both the user input and the result that was calculated
+$("#hidden-containter").show();
+```
+
 ## Validation 
