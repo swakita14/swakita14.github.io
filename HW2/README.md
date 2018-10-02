@@ -4,6 +4,29 @@ This is my second assignment for this class. For this assignement I needed to fi
 
 ## Using Git (Part 2)
 
+1. One of the primary objectives for this assignment was to understand the concept and mechanism of "Branching" in Git and use it effectively. Branching is a great method to work on the code without messing up the main "master" code that is already working. After the code has been tested and functional, the code would be "merged" or added to the main "master" code.
+
+2. I used two main branches for this assignment, one for the HTML Layout and one for the Javascript.
+
+3. To create a Layout branch, I used to command:
+
+```bash
+git branch Layout 
+```
+
+4. To checkout (or switch to) the branch, I used the command:
+
+```bash
+git checkout Layout
+```
+
+5. And finally, to merge it to the master branch after coding the requirements, I first switched to the master branch and I then merged the branch.
+
+```bash
+git checkout master
+git merge Layout
+```
+
 ## Planning, planning, and more planning
 
 1. Before I rushed and started coding, I decided to think on how the webpage should look, what kind of functionality the webpage would perform, and finally what the page would look after the form is submitted by the user. 
