@@ -80,7 +80,7 @@ git merge Layout
 
  4. I used the .ready() function to make sure that the page was properly loaded and ready for the user input, and nested my functions in there. 
 
- ```bash
+ ```javascript
   $(document).ready(function(){
 
   	//code omitted
@@ -90,7 +90,7 @@ git merge Layout
 
  5. For the form submittion and retrieving the information from the page, I used the .submit() function. This function allows the input information to be retreived once the user hits the button, and assigns the inputs to local variables in order to do some calculation with them. 
  
- ```bash
+ ```javascript
   $('#myForm').submit(function(e){
           e.preventDefault();
 
@@ -104,14 +104,14 @@ git merge Layout
 
 6. With the variables that I grabbed from the user, I input the numbers in the formula that I retreived from the NCSA page which calculates the 1RM number.
 
-```bash
+```javascript
 var ans = w_lifted / (1.0278 - (0.0278 * rep));
 var round = Math.ceil(ans);
 ```
 
 7. After the numbers have been calculated, it shows it on the page. I used jQuery to modify and add to the DOM and display the result using the .append() function. The page shows what the user has input, the calculated numbers, and a word of advice. 
 
-```bash
+```javascript
 //Appends the user inputs
 $('#input-table').append("<tr><th>Data Entered:</th></tr>");
 $('#input-table').append("<tr><td>BodyWeight: " + b_weight + "lbs.</td></tr>");
@@ -119,7 +119,7 @@ $('#input-table').append("<tr><td>WeightLifted: " + w_lifted + "lbs.</td></tr>")
 $('#input-table').append("<tr><td>Repetition: " + rep + "</td></tr>");
 ```
 
-```bash
+```javascript
 //Based off of the calculation, it will give you your 1RM and a word of advice
 if(round < b_weight){
     $('#summary').append("<li>You are a beginner and your estimated max is: " + round + "lbs.</li>");
@@ -137,7 +137,7 @@ else {
 
 8. Last but not least was the usage of the show and hide method. Since I put both the form and the result in containers, it was easy for me to make either one disappear or show. After the form has been submitted, the form container is hidden, and the result container is shown.  
 
-```bash
+```javascript
 //Let's hide the form so we can make space to place result
 $("#myForm").hide();
 
