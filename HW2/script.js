@@ -35,6 +35,12 @@
           //This will show both the user input and the result that was calculated
           $("#hidden-containter").show();
 
+           //Appends the use inputs
+          $('#input-table').append("<tr><th>Data Entered:</th></tr>");
+          $('#input-table').append("<tr><td>BodyWeight: " + b_weight + "lbs.</td></tr>");
+          $('#input-table').append("<tr><td>WeightLifted: " + w_lifted + "lbs.</td></tr>");
+          $('#input-table').append("<tr><td>Repetition: " + rep + "</td></tr>");
+
          
 
  
