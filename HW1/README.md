@@ -1,5 +1,8 @@
 # Welcome to HW1
 
+**Commits from HW1 is in the link below**
+[Commits From old Repo](https://github.com/swakita14/CS460_OldRepo/commits/master)
+
 This is my first homework assignment for my CS460 class. The task assigned to us was to use create a web-page using HTML, and using Bootstrap and CSS to make the page look neat and organized. 
 
 ## Using Git
