@@ -25,6 +25,10 @@
           	return false;
           }
 
+           //Magic Formula by NSCA to calculate !RM
+          var ans = w_lifted / (1.0278 - (0.0278 * rep));
+          var round = Math.ceil(ans);
+
 
          
 
