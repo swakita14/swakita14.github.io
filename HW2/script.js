@@ -55,6 +55,13 @@
           	$('#summary').append("<li>Make sure to focus on the three main movements (bench, deadlift, squat), and keep the accessory movements minimal.</li>");
           }
 
+          //Allows users to return to the original input form pages
+          $('#return-btn').show();
+          $('#return-btn').click(function() {
+
+          	location.reload();
+          });
+
          
 
  
