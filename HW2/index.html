@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <!-- Required meta tags -->
+ <meta charset="utf-8">
+
+ <!--Boostrap -->
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+<!-- Own Javascript -->
+ <script type="text/javascript" src="script.js"></script>    
+
+ <!-- Own Stylesheet -->
+ <link rel="stylesheet" href="style.css" type="text/css">
+
+ <title>Max Calculator</title>
+</head>
+<body>
+
+ <h2 id="title">Weightlifting Max Calculator</h2>
+
+    <!--Brief summary of the calculation and why it's so important -->
+    <br><br>
+    <h3 id="summary-title">Why is 1RM Testing Important?</h3>
+
+    <p id="description">The one-repetition maximum (1RM) test is often considered as the ‘gold standard’ for assessing the strength capacity of individuals in non-laboratory environments. It is simply defined as the maximal weight an individual can lift for only one repetition with correct technique. The 1RM test is most commonly used by strength and conditioning coaches to assess strength capacities, strength imbalances, and to evaluate the effectiveness of training programmes.
+      <a href="https://www.scienceforsport.com/1rm-testing/">Science For Sport</a>
+    </p>
+
+     <br>
+
+    <!--Form starts here -->
+
+    <form id="myForm">
+
+     <div class="form-group">
+      <label for="body-weight">Body Weight:</label>
+
+      <input type="number" class="form-control" id="body-weight" placeholder="Enter Body Weight" required>
+    </div>
+
+    <div class="form-group">
+      <label for="weight-lifted">Weight Lifted:</label>
+      <input type="number" class="form-control" id="weight-lifted" placeholder="Enter Lifted Weight" required>
+    </div> 
+
+    <div class="form-group">
+      <label for="repetition">Number of Repetition:</label>
+      <input type="number" class="form-control" id="repetition" placeholder="Enter the Number of Repetition" required>
+    </div>
+
+    <br>
+
+    <button type="submit" class="btn btn-primary btn-lg btn-block" id="btn">Calculate Single Repetition Max</button>
+
+    <!--Added a load chart for clarity and more information -->
+    <a href="https://www.nsca.com/contentassets/61d813865e264c6e852cadfe247eae52/nsca_training_load_chart.pdf">National Strength Condition Association (NSCA) - Training Load Chart</a>
+
+  </form>
+
+  <div class="container" id="hidden-container">
+  <div class="row justify-content-center">
+    <div class="col-4"">
+      <table id="input-table"></table>
+    </div>
+
+    <div class="col-4">
+      <ul  id="summary"></ul>
+    </div>
+  </div>
+  <br><br>
+  <button type="submit" class="btn btn-primary btn-lg" id="return-btn">Back to Input Page</button>
+</div>
+
+     
+
+
+  
+  </body>
+</html>
