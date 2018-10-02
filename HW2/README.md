@@ -1,6 +1,6 @@
 # Welcome to HW2
 
-This is my second assignment for this class. For this assignement I needed to first understand branching in Git. My next objective was to learn and use Javascript, and the it's library jQuery. I created an HTML form, and by using Javascript, I was able to select and modify elements in the DOM and repond to events.
+This is my second assignment for this class. For this assignement I needed to first understand branching in Git. My next objective was to learn and use Javascript, and it's library jQuery. I created an HTML form, and by using Javascript, I was able to select and modify elements in the DOM and respond to events.
 
 ## Using Git (Part 2)
 
@@ -11,13 +11,13 @@ This is my second assignment for this class. For this assignement I needed to fi
 3. To create a Layout branch, I used to command:
 
 ```bash
-git branch Layout 
+git branch layout 
 ```
 
 4. To checkout (or switch to) the branch, I used the command:
 
 ```bash
-git checkout Layout
+git checkout layout
 ```
 
 5. And finally, to merge it to the master branch after coding the requirements, I first switched to the master branch and I then merged the branch.
@@ -29,7 +29,7 @@ git merge Layout
 
 ## Planning, planning, and more planning
 
-1. Before I rushed and started coding, I decided to think on how the webpage should look, what kind of functionality the webpage would perform, and finally what the page would look after the form is submitted by the user. 
+1. Before I rushed and started coding, I thought about how the webpage should look, what kind of functionality the webpage would perform, and finally what the page would look after the form is submitted by the user. 
 
 2. Once I decided on what to do, I started drawing out a layout for the page, and how it would look after the form submission
 
@@ -40,7 +40,7 @@ git merge Layout
 
 1. Similar to the last assignment, I used Bootstrap and CSS for a consistent and clean look throughout the page
 
-```bash
+```ruby
 <div class="container" id="hidden-container">
   <div class="row justify-content-center">
     <div class="col-4"">
@@ -56,7 +56,7 @@ git merge Layout
 </div>
 ```
 
-```bash
+```ruby
 #title {
 
 	text-align: center;
@@ -73,7 +73,7 @@ git merge Layout
 
 3. First procedure was to add the link to my script file onto the HTML file (since I decided to do a seperate file for JavaScript).
 
-```bash
+```ruby
 <!-- Own Javascript -->
  <script type="text/javascript" src="script.js"></script>    
  ```
