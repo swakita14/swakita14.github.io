@@ -135,3 +135,9 @@ $("#hidden-containter").show();
     </div>
 
 ```
+
+## Working Page
+
+(https://github.com/swakita14/swakita14.github.io/tree/master/HW2/working.PNG)
+
+(https://github.com/swakita14/swakita14.github.io/tree/master/HW2/working1.PNG)
