@@ -138,6 +138,10 @@ $("#hidden-containter").show();
 
 ## Working Page
 
+1. This is the look of the actual working page:
 ![working1](https://github.com/swakita14/swakita14.github.io/blob/master/HW2/working.PNG)
 
+
+
+2. This is look of the page after the form has been submitted with the information:
 ![working2](https://github.com/swakita14/swakita14.github.io/blob/master/HW2/working1.PNG)
