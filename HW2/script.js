@@ -29,6 +29,11 @@
           var ans = w_lifted / (1.0278 - (0.0278 * rep));
           var round = Math.ceil(ans);
 
+          //Let's hide the form so we can make space to place result
+          $("#myForm").hide();
+          
+          //This will show both the user input and the result that was calculated
+          $("#hidden-containter").show();
 
          
 
