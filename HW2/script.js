@@ -5,6 +5,9 @@
  		//Just a test message to see if everything ran correctly
         console.log("Loaded Successfully");
 
+        //Hides the return to original page button
+        $('#return-btn').hide();
+
         //Form submission function
         $('#myForm').submit(function(e){
           e.preventDefault();
