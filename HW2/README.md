@@ -138,6 +138,6 @@ $("#hidden-containter").show();
 
 ## Working Page
 
-(https://github.com/swakita14/swakita14.github.io/tree/master/HW2/working.PNG)
+![working1](https://github.com/swakita14/swakita14.github.io/tree/master/HW2/working.PNG)
 
-(https://github.com/swakita14/swakita14.github.io/tree/master/HW2/working1.PNG)
+![working2](https://github.com/swakita14/swakita14.github.io/tree/master/HW2/working1.PNG)
