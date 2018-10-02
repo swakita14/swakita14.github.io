@@ -1,37 +1,22 @@
-## Welcome to GitHub Pages
+## Welcome to Shion Wakita's CS460 Profolio
 
-You can use the [editor on GitHub](https://github.com/swakita14/swakita14.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This is the first of the three classes that will enable to me to grow and develop as a Software Engineer. In order to successfully pass this class and attain the most knowledge out of it, the goal is to plan carefully, and stay on track. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### HW1:
 
-```markdown
-Syntax highlighted code block
+Our first assignemnt was to design a webpage using HTML, and use Bootstrap and CSS to enhance the looks of the page.
 
-# Header 1
-## Header 2
-### Header 3
+[Source Code](https://github.com/swakita14/swakita14.github.io/tree/master/HW1)
 
-- Bulleted
-- List
+[Preview Webpage](https://swakita14.github.io/HW1/index.html)
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+### HW2:
 
-[Link](url) and ![Image](src)
-```
+Our second assignment was to create a form using Javascript and jQuery, and to understnd the DOM and how to select and modify it.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+[Source Code](https://github.com/swakita14/swakita14.github.io/tree/master/HW2)
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/swakita14/swakita14.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+[Preview Webpage](https://swakita14.github.io/HW2/index.html)
