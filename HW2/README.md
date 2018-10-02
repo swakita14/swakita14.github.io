@@ -6,6 +6,13 @@ This is my second assignment for this class. For this assignement I needed to fi
 
 ## Planning, planning, and more planning
 
+1. Before I rushed and started coding, I decided to think on how the webpage should look, what kind of functionality the webpage would perform, and finally what the page would look after the form is submitted by the user. 
+
+2. Once I decided on what to do, I started drawing out a layout for the page, and how it would look after the form submission
+
+
+**Enter image here**
+
 ## Layout
 
 ## Javascript and jQuery
