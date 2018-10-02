@@ -15,6 +15,33 @@ This is my second assignment for this class. For this assignement I needed to fi
 
 ## Layout
 
+1. Similar to the last assignment, I used Bootstrap and CSS for a consistent and clean look throughout the page
+
+```bash
+<div class="container" id="hidden-container">
+  <div class="row justify-content-center">
+    <div class="col-4"">
+      <table id="input-table"></table>
+    </div>
+
+    <div class="col-4">
+      <ul  id="summary"></ul>
+    </div>
+  </div>
+  <br><br>
+  <button type="submit" class="btn btn-primary btn-lg" id="return-btn">Back to Input Page</button>
+</div>
+```
+
+```bash
+#title {
+
+	text-align: center;
+	padding-top: 30px;
+}
+
+```
+
 ## Javascript and jQuery
 
 ## Validation 
