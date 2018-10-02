@@ -41,6 +41,20 @@
           $('#input-table').append("<tr><td>WeightLifted: " + w_lifted + "lbs.</td></tr>");
           $('#input-table').append("<tr><td>Repetition: " + rep + "</td></tr>");
 
+          //Based off of the calculation, it will give you your 1RM and a word of advice
+          if(round < b_weight){
+          	$('#summary').append("<li>You are a beginner and your estimated max is: " + round + "lbs.</li>");
+          	$('#summary').append("<li>You are still at a position where linear progression would be work the best, make sure to increase the workload every traning session.</li>");
+          }
+          else if(round > b_weight && round < (b_weight*2) ){
+          	$('#summary').append("<li>You are an intermediate lifter and your estimated max is: " + round + "lbs.</li>");
+          	$('#summary').append("<li>At this level, linear progression becomes tough, its time to move on to proper programming.</li>");
+          }
+          else {
+          	$('#summary').append("<li>You are an advanced lifter and your estimated max is: " + round  + 'lbs.</li>');
+          	$('#summary').append("<li>Make sure to focus on the three main movements (bench, deadlift, squat), and keep the accessory movements minimal.</li>");
+          }
+
          
 
  
