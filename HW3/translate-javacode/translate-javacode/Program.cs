@@ -62,7 +62,17 @@ namespace translate_javacode
             rear = null;
         }
 
-
+        public bool IsEmpty()
+        {
+            if (front == null && rear == null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
 
     }
