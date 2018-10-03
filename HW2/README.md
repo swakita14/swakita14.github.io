@@ -33,14 +33,13 @@ git merge Layout
 
 2. Once I decided on what to do, I started drawing out a layout for the page, and how it would look after the form submission
 
-
-**Enter image here**
+![Planning Image](https://github.com/swakita14/swakita14.github.io/blob/master/HW2/images/planning.pdf)
 
 ## Layout
 
 1. Similar to the last assignment, I used Bootstrap and CSS for a consistent and clean look throughout the page
 
-```ruby
+```html
 <div class="container" id="hidden-container">
   <div class="row justify-content-center">
     <div class="col-4"">
@@ -56,7 +55,7 @@ git merge Layout
 </div>
 ```
 
-```ruby
+```css
 #title {
 
 	text-align: center;
@@ -73,7 +72,7 @@ git merge Layout
 
 3. First procedure was to add the link to my script file onto the HTML file (since I decided to do a seperate file for JavaScript).
 
-```ruby
+```html
 <!-- Own Javascript -->
  <script type="text/javascript" src="script.js"></script>    
  ```
@@ -151,7 +150,7 @@ $("#hidden-containter").show();
 
 2. I made sure that I set a limit for all the unrealistic numbers that may be input by the user, by using min and max value.
 
-```bash
+```html
 <div class="form-group">
       <label for="repetition">Number of Repetition:</label>
       <input type="number" class="form-control" id="repetition" placeholder="Enter the Number of Repetition" min="1" max="15" required>
@@ -162,9 +161,9 @@ $("#hidden-containter").show();
 ## Working Page
 
 1. This is the look of the actual working page:
-![working1](https://github.com/swakita14/swakita14.github.io/blob/master/HW2/working.PNG)
+![working1](https://github.com/swakita14/swakita14.github.io/blob/master/HW2/images/working.PNG)
 
 
 
 2. This is look of the page after the form has been submitted with the information:
-![working2](https://github.com/swakita14/swakita14.github.io/blob/master/HW2/working1.PNG)
+![working2](https://github.com/swakita14/swakita14.github.io/blob/master/HW2/images/working1.PNG)
