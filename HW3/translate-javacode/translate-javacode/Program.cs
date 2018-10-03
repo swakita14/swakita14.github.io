@@ -35,6 +35,19 @@ namespace translate_javacode
 
         bool isEmpty();
 
-
     }
+
+    class QueueUnderflowException : SystemException
+    {
+        public QueueUnderflowException() : base()
+        {
+            
+        }
+
+        public QueueUnderflowException(string msg) : base(msg)
+        {
+
+        }
+
+    } 
 }
