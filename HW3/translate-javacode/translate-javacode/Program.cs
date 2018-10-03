@@ -166,7 +166,7 @@ namespace translate_javacode
             {
                 n = int.Parse(args[0]);
             }
-            catch (FormatException e)
+            catch (FormatException)
             {
                 Console.WriteLine("I'm sorry, I can't understand the number: " + args[0]);
                 return;
@@ -184,11 +184,7 @@ namespace translate_javacode
                     Console.Write(" ");
                 }
                 Console.WriteLine(s);
-            }
-
-
-            
+            }        
         }
-
     }
 }
