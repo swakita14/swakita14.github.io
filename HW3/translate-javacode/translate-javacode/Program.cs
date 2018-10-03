@@ -26,4 +26,15 @@ namespace translate_javacode
         }
 
     }
+
+    interface IQueueInterface<T>
+    {
+        T push(T element);
+
+        T pop();
+
+        bool isEmpty();
+
+
+    }
 }
