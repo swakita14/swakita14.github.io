@@ -33,8 +33,7 @@ git merge Layout
 
 2. Once I decided on what to do, I started drawing out a layout for the page, and how it would look after the form submission
 
-
-**Enter image here**
+[Planning Image](https://github.com/swakita14/swakita14.github.io/blob/master/HW2/images/planning.pdf)
 
 ## Layout
 
