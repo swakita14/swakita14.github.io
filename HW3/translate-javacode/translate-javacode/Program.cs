@@ -62,6 +62,28 @@ namespace translate_javacode
             rear = null;
         }
 
+        public T Push(T element)
+        {
+            if (element == null)
+            {
+                throw new NullReferenceException();
+            }
+
+            if (IsEmpty())
+            {
+                Node<T> tmp = new Node<T>(element, null);
+                rear = front = tmp;
+            }
+            else
+            {
+                Node<T> tmp = new Node<T>(element, null);
+                rear.next = tmp;
+                rear = tmp;
+            }
+
+            return element;
+        }
+
         public bool IsEmpty()
         {
             if (front == null && rear == null)
