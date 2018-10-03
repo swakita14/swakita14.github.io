@@ -15,7 +15,7 @@ Our first assignemnt was to design a webpage using HTML, and use Bootstrap and C
 
 ### HW2:
 
-Our second assignment was to create a form using Javascript and jQuery, and to understand the DOM and how to select and modify it.
+Our second assignment was to create a form using HTML and respond to an user action using Javascript and jQuery, and to understand the DOM and how to select and modify it.
 
 [Source Code](https://github.com/swakita14/swakita14.github.io/tree/master/HW2)
 
