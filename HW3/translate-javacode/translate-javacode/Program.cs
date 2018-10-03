@@ -84,6 +84,29 @@ namespace translate_javacode
             return element;
         }
 
+        public T Pop()
+        {
+            T tmp = default(T);
+            if (IsEmpty())
+            {
+                throw new QueueUnderflowException("This queue was empty when pop was invoked.");
+            }
+            else if (front == rear)
+            {
+                tmp = front.data;
+                front = null;
+                rear = null;
+            }
+            else
+            {
+                tmp = front.data;
+                front = front.next;
+            }
+
+            return tmp;
+
+        }
+
         public bool IsEmpty()
         {
             if (front == null && rear == null)
