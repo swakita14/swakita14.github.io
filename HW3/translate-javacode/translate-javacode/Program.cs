@@ -27,13 +27,13 @@ namespace translate_javacode
 
     }
 
-    interface IQueueInterface<T>
+    public interface IQueueInterface<T>
     {
-        T push(T element);
+        T Push(T element);
 
-        T pop();
+        T Pop();
 
-        bool isEmpty();
+        bool IsEmpty();
 
     }
 
@@ -50,4 +50,20 @@ namespace translate_javacode
         }
 
     } 
+
+    class LinkedQueue<T> : IQueueInterface<T>
+    {
+        private Node<T> front;
+        private Node<T> rear;
+
+        public LinkedQueue()
+        {
+            front = null;
+            rear = null;
+        }
+
+
+
+
+    }
 }
