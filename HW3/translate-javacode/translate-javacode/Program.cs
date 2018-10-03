@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace translate_javacode
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-        }
-    }
-
+    
     class Node<T>
     {
         public T data;
@@ -121,7 +115,7 @@ namespace translate_javacode
     }
 
     //Don't have to import anything because of the same namespace
-    class Main
+    class MainClass
     {
         static LinkedList<string> generateBinaryRepresentationList(int n)
         {
@@ -154,12 +148,47 @@ namespace translate_javacode
 
             }
             return output;
+
         }
 
+        static void Main(string[] args)
+        {
 
 
+            int n = 10;
+            if (args.Length < 1)
+            {
+                Console.WriteLine("Please invoke with the max value to print binary up to, like this:");
+                Console.WriteLine("\tjava Main 12");
+                return;
+            }
+            try
+            {
+                n = int.Parse(args[0]);
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine("I'm sorry, I can't understand the number: " + args[0]);
+                return;
+            }
+
+            LinkedList<string> output = generateBinaryRepresentationList(n);
 
 
+            int maxLength = output.Last().Length;
+
+            foreach (string s in output)
+            {
+                for(int i =0; i < maxLength - s.Length; ++i)
+                {
+                    Console.Write(" ");
+                }
+                Console.WriteLine(s);
+            }
+
+
+            
+        }
 
     }
 }
