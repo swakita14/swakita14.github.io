@@ -118,6 +118,47 @@ namespace translate_javacode
                 return false;
             }
         }
+    }
+
+    //Don't have to import anything because of the same namespace
+    class Main
+    {
+        static LinkedList<string> generateBinaryRepresentationList(int n)
+        {
+            LinkedQueue<StringBuilder> q = new LinkedQueue<StringBuilder>();
+
+            LinkedList<string> output = new LinkedList<string>();
+
+            if(n < 1)
+            {
+
+                return output;
+            }
+
+
+            q.Push(new StringBuilder("1"));
+
+            //BFS
+            while (n-- > 0)
+            {
+                StringBuilder sb = q.Pop();
+                output.AddLast(sb.ToString());
+
+                StringBuilder sbc = new StringBuilder(sb.ToString());
+
+                sb.Append('0');
+                q.Push(sb);
+
+                sbc.Append('1');
+                q.Push(sbc);
+
+            }
+            return output;
+        }
+
+
+
+
 
 
     }
