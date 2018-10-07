@@ -175,7 +175,10 @@ namespace translate_javacode
         }
     }
 
-    //Don't have to import anything because of the same namespace
+    /// <summary>
+    /// Prints the binary representation of all number fro 1 up to n
+    /// This uses the implemented FIFO queue to perform a BFS and creates a tree
+    /// </summary>
     class MainClass
     {
         static LinkedList<string> generateBinaryRepresentationList(int n)
@@ -212,6 +215,10 @@ namespace translate_javacode
 
         }
 
+        /// <summary>
+        /// driver program Test the entire function above
+        /// </summary>
+        /// <param name="args">takes in the user input and creates and outputs a traversal of a virtual binary tree</param>
         static void Main(string[] args)
         {
 
