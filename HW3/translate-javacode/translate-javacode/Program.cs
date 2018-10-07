@@ -6,13 +6,19 @@ using System.Threading.Tasks;
 
 namespace translate_javacode
 {
-    
+    /// <summary>
+    /// Singly linked node class
+    /// </summary>
     class Node<T>
     {
-        public T data;
-        public Node<T> next;
+        public T data; //This is the data that is in the Node
+        public Node<T> next; // This points to the next Node
 
-
+        /// <summary>
+        ///This is the default constructor of the Node Class
+        ///<paramref name="data"/>Object that is held within the node
+        ///<paramref name="next"/>Pointer to the node next to it
+        /// </summary>
         public Node(T data, Node<T> next)
         {
             this.data = data;
@@ -21,12 +27,30 @@ namespace translate_javacode
 
     }
 
-    public interface IQueueInterface<T>
+    /// <summary>
+    /// This is the Interface class for the LinkedQueue that we will be using in the LinkedQueue Class
+    /// </summary>
+    interface IQueueInterface<T>
     {
+        /// <summary>
+        /// This method pushes or adds and elements to the list
+        /// <paramref name="element"/> This is the element that is being appended
+        /// <returns>Object that is being pushed int</returns>
+        /// </summary>
         T Push(T element);
 
+
+        /// <summary>
+        /// This method sees what is on top of the list
+        /// <returns> Returns the object on top or recently appended</returns>
+        /// </summary>
         T Pop();
 
+
+        /// <summary>
+        /// This method returns a bool (true or false) depending on if the the list is empty or not
+        /// <returns>True if there is an item, False if there is none. list is empty</returns>
+        /// </summary>
         bool IsEmpty();
 
     }
