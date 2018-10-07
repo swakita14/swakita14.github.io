@@ -20,3 +20,11 @@ Our second assignment was to create a form using HTML and respond to an user act
 [Source Code](https://github.com/swakita14/swakita14.github.io/tree/master/HW2)
 
 [Preview Webpage](https://swakita14.github.io/HW2/index.html)
+
+
+### HW3:
+
+Our next task was to take a Java program and convert it into C# in order to get used to the language and prepare ourselves for the upcoming MVC web apps that use C# extenstively 
+
+[Source Code](https://github.com/swakita14/swakita14.github.io/tree/master/HW3)
+
