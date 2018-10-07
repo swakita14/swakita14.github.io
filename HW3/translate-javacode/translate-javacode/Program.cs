@@ -227,7 +227,7 @@ namespace translate_javacode
             if (args.Length < 1)
             {
                 Console.WriteLine("Please invoke with the max value to print binary up to, like this:");
-                Console.WriteLine("\tjava Main 12");
+                Console.WriteLine("\tProgram 12");
                 return;
             }
             try
