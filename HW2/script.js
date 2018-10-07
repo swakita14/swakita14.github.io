@@ -17,16 +17,6 @@
           var w_lifted = $('#weight-lifted').val();
           var rep = $('#repetition').val();
 
-           //checking the form to make sure no large, obnoxious numbers are input in the form
-          if (b_weight.length > 3 || w_lifted.length > 3) {
-          	alert("Please enter a 3 digit value for both body weight and weight lifted");
-          	return false;
-          }
-
-          if (rep.length > 2 || rep > 15){
-          	alert("Please enter a value that is in the double digit or lift a heavier weight, Max: 15");
-          	return false;
-          }
 
            //Magic Formula by NSCA to calculate !RM
           var ans = w_lifted / (1.0278 - (0.0278 * rep));
