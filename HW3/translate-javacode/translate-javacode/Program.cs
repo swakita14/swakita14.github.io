@@ -180,7 +180,13 @@ namespace translate_javacode
     /// This uses the implemented FIFO queue to perform a BFS and creates a tree
     /// </summary>
     class MainClass
+
     {
+        /// <summary>
+        /// This method creates the binary representation list with the number input
+        /// </summary>
+        /// <param name="n">This is the function that takes in the number and creates the binary representation list</param>
+        /// <returns>returns the linkedlist with type string</returns>
         static LinkedList<string> generateBinaryRepresentationList(int n)
         {
             LinkedQueue<StringBuilder> q = new LinkedQueue<StringBuilder>();
