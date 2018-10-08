@@ -32,6 +32,19 @@ public class QueueUnderflowException extends RuntimeException
 But in C# the same class with the same functionality ends up looking like this:
 
 ```C#
+ class QueueUnderflowException : SystemException
+    {
+        public QueueUnderflowException() : base()
+        {
+            
+        }
+
+        public QueueUnderflowException(string msg) : base(msg)
+        {
+
+        }
+
+    }
 
 
 ## XML Comments 
