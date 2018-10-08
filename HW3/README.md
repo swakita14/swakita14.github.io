@@ -12,7 +12,10 @@ The third assignment for this class was to use Visual Studio to translate from J
 ## Libraries / Conversion
 
 1. For this translation, it is important NOT TO COPY AND PASTE! but instead translate as you go. There are many similarities in C# and Java, but there are differences as well.
-2. In Java the QueueUnderflowExcpetion Class was coded like this:
+2. There are other rules in C# that are not applicable in Java:
+   -Built in typenames like string objects are lowercase
+   -Method names and public fields start with uppercase
+3. There are other differences, for intance in Java the QueueUnderflowExcpetion Class was coded like this:
 
 ``` Java
 public class QueueUnderflowException extends RuntimeException
@@ -45,8 +48,31 @@ But in C# the same class with the same functionality ends up looking like this:
         }
 
     }
+```
+4. For other things that needed translation: LinkedList, StringBuilder, and Println I looked up documentarties and libraries for both Java and C# and found the methods
+   that matched each other in terms of functionality and used it.
+
+   LinkedList.add ---> LinkedList.AddLast
+   System.out.println ---> Console.Writeline
 
 
 ## XML Comments 
+
+1. XML comments are a way to make others understand your code. 
+2. By typing "///" on top of methods and classes, Visual Studio auto-creates a comment section that includes the parameter, return values, etc.
+3. The actual comments are similar in the looks compared to HTML:
+
+```HTML
+ /// <summary>
+        /// This overrides the extended SystemException class's constructor using the :base() and takes a msg
+        /// <paramref name="msg"/> takes in a message and overrides it through the SystemsExceptions constructor
+        /// </summary>
+        public QueueUnderflowException(string msg) : base(msg)
+        {
+
+        }
+```
+
+
 
 ## ScreenShot of Working Application
