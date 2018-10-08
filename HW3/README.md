@@ -75,4 +75,9 @@ But in C# the same class with the same functionality ends up looking like this:
 
 
 
-## ScreenShot of Working Application
+## Working Application
+
+1. There are different paths you can take to compile the code and get the application running, the path I took was:
+	Developer Command Prompt for VS 2017 -> specify path -> compile file using csc "Program name" -> run file 
+
+2. **Link to Image**
