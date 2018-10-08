@@ -13,8 +13,8 @@ The third assignment for this class was to use Visual Studio to translate from J
 
 1. For this translation, it is important NOT TO COPY AND PASTE! but instead translate as you go. There are many similarities in C# and Java, but there are differences as well.
 2. There are other rules in C# that are not applicable in Java:
-   <li>Built in typenames like string objects are lowercase</li>
-   <li>Method names and public fields start with uppercase</li>
+   <ul>Built in typenames like string objects are lowercase</ul>
+   <ul>Method names and public fields start with uppercase</ul>
 3. There are other differences, for intance in Java the QueueUnderflowExcpetion Class was coded like this:
 
 ``` Java
@@ -52,8 +52,8 @@ But in C# the same class with the same functionality ends up looking like this:
 4. For other things that needed translation: LinkedList, StringBuilder, and Println I looked up documentarties and libraries for both Java and C# and found the methods
    that matched each other in terms of functionality and used it.
 
-   <li>LinkedList.add ---> LinkedList.AddLast</li>
-   <li>System.out.println ---> Console.Writeline</li>
+   <ul>LinkedList.add ---> LinkedList.AddLast</ul>
+   <ul>System.out.println ---> Console.Writeline</ul>
 
 
 ## XML Comments 
@@ -80,4 +80,4 @@ But in C# the same class with the same functionality ends up looking like this:
 1. There are different paths you can take to compile the code and get the application running, the path I took was:
 	Developer Command Prompt for VS 2017 -> specify path -> compile file using csc "Program name" -> run file 
 
-2. ![WorkingImage](https://github.com/swakita14/swakita14.github.io/blob/master/HW3/screenshots/Screenshot-hw3.PNG)
+ ![WorkingImage](https://github.com/swakita14/swakita14.github.io/blob/master/HW3/screenshots/Screenshot-hw3.PNG)
