@@ -14,13 +14,16 @@ The third assignment for this class was to use Visual Studio to translate from J
 1. For this translation, it is important NOT TO COPY AND PASTE! but instead translate as you go. There are many similarities in C# and Java, but there are differences as well.
 2. There are other rules in C# that are not applicable in Java:
    <ul>Built in typenames like string objects are lowercase</ul>
-   ```C#
-    LinkedList<string> output = generateBinaryRepresentationList(n);
-   ```
+   
+```C#
+    LinkedList<string> output = generateBinaryRepresentationList(n)
+```
+   
    <ul>Method names and public fields start with uppercase</ul>
-   ```C#
+   
+```C#
 	public Node(T data, Node<T> next)
-   ```
+```
 3. There are other differences, for intance in Java the QueueUnderflowExcpetion Class was coded like this:
 
 ``` Java
