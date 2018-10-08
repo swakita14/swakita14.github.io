@@ -22,7 +22,7 @@ The third assignment for this class was to use Visual Studio to translate from J
    <ul>Method names and public fields start with uppercase</ul>
    
 ```C#
-	public Node(T data, Node<T> next)
+    public bool IsEmpty()
 ```
 3. There are other differences, for intance in Java the QueueUnderflowExcpetion Class was coded like this:
 
