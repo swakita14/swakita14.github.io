@@ -89,4 +89,4 @@ But in C# the same class with the same functionality ends up looking like this:
 1. There are different paths you can take to compile the code and get the application running, the path I took was:
 	Developer Command Prompt for VS 2017 -> specify path -> compile file using csc "Program name" -> run file 
 
- ![WorkingImage](https://github.com/swakita14/swakita14.github.io/blob/master/HW3/screenshots/Screenshot-hw3.PNG)
+ ![WorkingImage](/screenshots/Screenshot-hw3.PNG)
