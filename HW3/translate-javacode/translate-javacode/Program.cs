@@ -240,7 +240,7 @@ namespace translate_javacode
             {
                 n = int.Parse(args[0]);
             }
-            catch (FormatException)
+            catch (FormatException ex)
             {
                 Console.WriteLine("I'm sorry, I can't understand the number: " + args[0]);
                 return;
