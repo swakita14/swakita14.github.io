@@ -10,7 +10,9 @@ Our first assignemnt was to design a webpage using HTML, and use Bootstrap and C
 
 * [Source Code](https://github.com/swakita14/swakita14.github.io/tree/master/HW1)
 
-* [Preview Webpage](https://swakita14.github.io/HW1/index.html)
+* [Preview Webpage](https://swakita14.github.io/HW1/hw1.html)
+
+* [Journal](https://swakita14.github.io/HW1/index.html)
 
 
 ### HW2:
@@ -19,7 +21,9 @@ Our second assignment was to create a form using HTML and respond to an user act
 
 * [Source Code](https://github.com/swakita14/swakita14.github.io/tree/master/HW2)
 
-* [Preview Webpage](https://swakita14.github.io/HW2/index.html)
+* [Preview Webpage](https://swakita14.github.io/HW2/hw1.html)
+
+* [Journal](https://swakita14.github.io/HW2/index.html)
 
 
 ### HW3:
