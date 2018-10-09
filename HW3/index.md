@@ -15,18 +15,18 @@ The third assignment for this class was to use Visual Studio to translate from J
 2. There are other rules in C# that are not applicable in Java:
    <ul>Built in typenames like string objects are lowercase</ul>
    
-```C#
+```c#
     LinkedList<string> output = generateBinaryRepresentationList(n)
 ```
    
    <ul>Method names and public fields start with uppercase</ul>
    
-```C#
+```c#
     public bool IsEmpty()
 ```
 3. There are other differences, for intance in Java the QueueUnderflowExcpetion Class was coded like this:
 
-``` Java
+```java
 public class QueueUnderflowException extends RuntimeException
 {
   public QueueUnderflowException()
@@ -43,7 +43,7 @@ public class QueueUnderflowException extends RuntimeException
 
 But in C# the same class with the same functionality ends up looking like this:
 
-```C#
+```c#
  class QueueUnderflowException : SystemException
     {
         public QueueUnderflowException() : base()
@@ -71,7 +71,7 @@ But in C# the same class with the same functionality ends up looking like this:
 2. By typing "///" on top of methods and classes, Visual Studio auto-creates a comment section that includes the parameter, return values, etc.
 3. The actual comments are similar in the looks compared to HTML:
 
-```HTML
+```html
  	/// <summary>
         /// This overrides the extended SystemException class's constructor using the :base() and takes a msg
         /// <paramref name="msg"/> takes in a message and overrides it through the SystemsExceptions constructor
@@ -89,4 +89,4 @@ But in C# the same class with the same functionality ends up looking like this:
 1. There are different paths you can take to compile the code and get the application running, the path I took was:
 	Developer Command Prompt for VS 2017 -> specify path -> compile file using csc "Program name" -> run file 
 
- ![WorkingImage](/screenshots/Screenshot-hw3.PNG)
+ ![WorkingImage](Screenshot-hw3.PNG)
