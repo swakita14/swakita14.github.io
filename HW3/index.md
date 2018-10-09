@@ -2,6 +2,8 @@
 
 The third assignment for this class was to use Visual Studio to translate from Java to C#. We will eventually be using both Visual Studio and C# to code our Web Application in MVC framework, so it'll be in my best interest to get familiar with both now. 
 
+* [View Code on GitHub](https://github.com/swakita14/swakita14.github.io/tree/master/HW3)
+
 ## Preparation:
 
 1. First thing in this assignment was to get Visual Studio and get familiar with it. Although I've played around with it during summer, I know it's a powerful tool so I guess I'll learn more about it as I go.
