@@ -2,6 +2,9 @@
 
 This is my second assignment for this class. For this assignement I needed to first understand branching in Git. My next objective was to learn and use Javascript, and it's library jQuery. I created an HTML form, and by using Javascript, I was able to select and modify elements in the DOM and respond to events.
 
+* [Demo Page](https://swakita14.github.io/HW2/hw1.html)
+* [View Code on GitHub](https://github.com/swakita14/swakita14.github.io/tree/master/HW2)
+
 ## Using Git (Part 2)
 
 1. One of the primary objectives for this assignment was to understand the concept and mechanism of "Branching" in Git and use it effectively. Branching is a great method to work on the code without messing up the main "master" code that is already working. After the code has been tested and functional, the code would be "merged" or added to the main "master" code.
