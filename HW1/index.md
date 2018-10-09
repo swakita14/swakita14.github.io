@@ -5,6 +5,9 @@
 
 This is my first homework assignment for my CS460 class. The task assigned to us was to use create a web-page using HTML, and using Bootstrap and CSS to make the page look neat and organized. 
 
+* [Demo Page](https://swakita14.github.io/HW1/hw1.html)
+* [View Code on GitHub](https://github.com/swakita14/swakita14.github.io/tree/master/HW1)
+
 ## Using Git
 
 One of the first requirements is that we familiarize with Git. I knew that that this class would require to use Git extensively so I went ahead started using Git over the summer. 
