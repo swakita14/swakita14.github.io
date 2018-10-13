@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -28,12 +29,16 @@ namespace WebApplication1_HW4.Controllers
             return View();
         }
 
-       
-        public ActionResult ColorChooser()
+        
+        public ActionResult ColorChooser(string color1, string color2)
         {
-
-           
-
+            ViewBag.trace = false; 
+            if (color1 != null)
+            {
+                ViewBag.trace = true;
+            }
+            Color _color = System.Drawing.ColorTranslator.FromHtml(color1);
+            ViewData["color"] = _color;
             return View();
             
         }
