@@ -7,49 +7,58 @@
 <h2>Convert Miles to Metric</h2>
 <br />
 <div class="container">
-    <form id="input-form">
+    <form method="post" action="~/Home/Converter" id="input-form">
         <div class="row">
-            <div class="col">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="miles-input">Miles:</label>
                     <input type="number" class="form-control" id="miles-input" placeholder="Enter Miles" required>
                     <br />
                 </div>
             </div>
-        </div>
+        
 
        
-            <div class="col">
+            <div class="col-md-6">
+                <h4>Select a Unit:</h4>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                    <label class="form-check-label" for="exampleRadios1">
+                    <input class="form-check-input" type="radio" name="milli" id="mm" checked>
+                    <label class="form-check-label" for="mm1">
                         millimeters
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                    <label class="form-check-label" for="exampleRadios2">
+                    <input class="form-check-input" type="radio" name="centi" id="cm" >
+                    <label class="form-check-label" for="cm">
                         centimeters
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                    <label class="form-check-label" for="exampleRadios2">
+                    <input class="form-check-input" type="radio" name="meter" id="mt" >
+                    <label class="form-check-label" for="mt">
                         meters
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                    <label class="form-check-label" for="exampleRadios2">
+                    <input class="form-check-input" type="radio" name="kilo" id="km" >
+                    <label class="form-check-label" for="km">
                         kilometers
                     </label>
                 </div>
+                <br />
+            </div>
          
         </div>
         <br />
 
-        <button type="submit" class="btn btn-primary" id="btn">Convert</button>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary" id="btn">Convert</button>
+        </div>      
     </form>
 </div>
+
+
+
+
 
 
