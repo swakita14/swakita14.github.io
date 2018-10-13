@@ -5,14 +5,15 @@
 
 
 <h2>Convert Miles to Metric</h2>
+
 <br />
 <div class="container">
-    <form method="post" action="~/Home/Converter" id="input-form">
+    <form method="get" action="~/Home/Converter" id="input-form">
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="miles-input">Miles:</label>
-                    <input type="number" class="form-control" id="miles-input" placeholder="Enter Miles" required>
+                    <input type="number" class="form-control" name="miles" id="miles-input" placeholder="Enter Miles" required>
                     <br />
                 </div>
             </div>
@@ -22,25 +23,25 @@
             <div class="col-md-6">
                 <h4>Select a Unit:</h4>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="milli" id="mm" checked>
+                    <input class="form-check-input" type="radio" name="metric" id="mm" value="mm" checked >
                     <label class="form-check-label" for="mm1">
                         millimeters
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="centi" id="cm" >
+                    <input class="form-check-input" type="radio" name="metric" id="cm" value="cm">
                     <label class="form-check-label" for="cm">
                         centimeters
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="meter" id="mt" >
+                    <input class="form-check-input" type="radio" name="metric" id="mt" value="mt" >
                     <label class="form-check-label" for="mt">
                         meters
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="kilo" id="km" >
+                    <input class="form-check-input" type="radio" name="metric" id="km" value="km" >
                     <label class="form-check-label" for="km">
                         kilometers
                     </label>
@@ -52,9 +53,17 @@
         <br />
 
         <div class="text-center">
-            <button type="submit" class="btn btn-primary" id="btn">Convert</button>
+            <button type="submit" value="Submit" class="btn btn-primary" id="btn">Convert</button>
         </div>      
     </form>
+
+    
+</div>
+
+<div>
+    <h2>@ViewBag.Message</h2>
+   
+
 </div>
 
 

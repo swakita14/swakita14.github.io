@@ -27,10 +27,42 @@ namespace WebApplication1_HW4.Controllers
             return View();
         }
 
+       [HttpGet]
         public ActionResult Converter()
         {
 
+            int miles = int.Parse(Request.QueryString["miles"]);
+            string metricUnit = Request.QueryString["metric-unit-radio"];
+            double milesToMetric = 0;
+            string unit = "";
 
+            if (metricUnit == "mm")
+            {
+                unit = "mm";
+                milesToMetric = (miles * 1609344);
+
+            }
+            else if (metricUnit == "cm")
+            {
+                unit = "cm";
+                milesToMetric = (miles * 160934.4);
+
+
+            }
+            else if (metricUnit == "mt")
+            {
+                unit = "m";
+                milesToMetric = (miles * 1609.344);
+
+            }
+            else
+            {
+                unit = "km";
+                milesToMetric = (miles * 1.609344);
+            }
+
+
+            
 
             return View();
         }
