@@ -15,17 +15,19 @@ namespace WebApplication1_HW4.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult ColorChooser()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public ActionResult ColorChooser(string color1, string color2)
         {
-            ViewBag.trace = false;
-            if (color1 != null)
-            {
-                ViewBag.trace = true;
-            }
-            Color _color = System.Drawing.ColorTranslator.FromHtml(color1);
-            ViewData["color"] = _color;
-            return View();
-
+            Color color = ColorTranslator.FromHtml(color1);
+            return View(color);
         }
+
+       
     }
 }

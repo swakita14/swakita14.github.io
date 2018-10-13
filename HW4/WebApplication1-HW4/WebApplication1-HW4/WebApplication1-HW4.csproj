@@ -196,6 +196,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\ColorChooser.cshtml" />
     <Content Include="Views\Color\ColorChooser.cshtml" />
+    <Content Include="Views\Color\HelloWorld.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
