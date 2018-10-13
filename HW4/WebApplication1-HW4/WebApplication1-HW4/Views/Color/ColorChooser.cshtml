@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "ColorChooser";
+}
+
+<h2>Create a New Color</h2>
+
+<p>Please enter color in HTML hexidecimal format: #AABBCC</p>
+<br />
+
+
+@using (Html.BeginForm("ColorChooser", "Color" , FormMethod.Post, new { @class = "myForm" }))
+{
+    <div class="form-group">
+        <label for="input-color1">First Color:</label>
+        @Html.TextBox("input-color1", "", new { @class = "form-control" , @pattern = "#[0-9A-Fa-f]{6}", @placeholder = "First Color" })
+    </div>
+
+    <div class="form-group">
+        <label for="input-color2">Second Color:</label>
+        @Html.TextBox("input-color2", "", new { @class = "form-control", @pattern = "#[0-9A-Fa-f]{6}", @placeholder = "Second Color"})
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+}
+
+<div>
+    @if (ViewBag.trace)
+    {
+    @ViewData["color"]
+    }
+</div>
