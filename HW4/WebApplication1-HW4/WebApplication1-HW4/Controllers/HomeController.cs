@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Text.RegularExpressions;
 using System.Web.Mvc;
 
 namespace WebApplication1_HW4.Controllers
@@ -27,9 +28,14 @@ namespace WebApplication1_HW4.Controllers
             return View();
         }
 
+       
         public ActionResult ColorChooser()
         {
+
+           
+
             return View();
+            
         }
     }
 }
