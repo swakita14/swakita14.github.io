@@ -27,25 +27,30 @@ namespace WebApplication1_HW4.Controllers
             return View();
         }
 
-       [HttpGet]
+
+        [HttpGet]
         public ActionResult Converter()
         {
 
-            int miles = int.Parse(Request.QueryString["miles"]);
+            double miles = Convert.ToInt32(Request.QueryString["miles"]);
+     
             string metricUnit = Request.QueryString["metric-unit-radio"];
             double milesToMetric = 0;
             string unit = "";
+            ViewBag.Show = false;
 
             if (metricUnit == "mm")
             {
                 unit = "mm";
                 milesToMetric = (miles * 1609344);
+                ViewBag.Show = true;
 
             }
             else if (metricUnit == "cm")
             {
                 unit = "cm";
                 milesToMetric = (miles * 160934.4);
+                ViewBag.Show = true;
 
 
             }
@@ -53,16 +58,20 @@ namespace WebApplication1_HW4.Controllers
             {
                 unit = "m";
                 milesToMetric = (miles * 1609.344);
+                ViewBag.Show = true;
 
             }
-            else
+            else if (metricUnit == "km")
             {
                 unit = "km";
                 milesToMetric = (miles * 1.609344);
+                ViewBag.Show = true;
             }
 
+            ViewData["results"] = (miles + " miles is equal to " + milesToMetric + unit);
 
-            
+
+
 
             return View();
         }

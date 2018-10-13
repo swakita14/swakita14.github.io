@@ -23,25 +23,25 @@
             <div class="col-md-6">
                 <h4>Select a Unit:</h4>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="metric" id="mm" value="mm" checked >
+                    <input class="form-check-input" type="radio" name="metric-unit-radio" id="mm" value="mm" checked >
                     <label class="form-check-label" for="mm1">
                         millimeters
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="metric" id="cm" value="cm">
+                    <input class="form-check-input" type="radio" name="metric-unit-radio" id="cm" value="cm">
                     <label class="form-check-label" for="cm">
                         centimeters
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="metric" id="mt" value="mt" >
+                    <input class="form-check-input" type="radio" name="metric-unit-radio" id="mt" value="mt" >
                     <label class="form-check-label" for="mt">
                         meters
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="metric" id="km" value="km" >
+                    <input class="form-check-input" type="radio" name="metric-unit-radio" id="km" value="km" >
                     <label class="form-check-label" for="km">
                         kilometers
                     </label>
@@ -53,16 +53,18 @@
         <br />
 
         <div class="text-center">
-            <button type="submit" value="Submit" class="btn btn-primary" id="btn">Convert</button>
+            <input type="submit" value="Submit" class="btn btn-primary" id="btn"/>
         </div>      
     </form>
 
     
 </div>
-
+<br />
 <div>
-    <h2>@ViewBag.Message</h2>
-   
+    @if (ViewBag.Show)
+    {
+    <h3>@ViewData["results"]</h3>
+    }
 
 </div>
 
