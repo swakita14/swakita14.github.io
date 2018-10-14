@@ -12,7 +12,7 @@ namespace WebApplication1_HW4.Controllers
         // GET: Color
         public ActionResult Index()
         {
-            return View();
+            return View("Hello World");
         }
 
         [HttpGet]
@@ -24,8 +24,18 @@ namespace WebApplication1_HW4.Controllers
         [HttpPost]
         public ActionResult ColorChooser(string color1, string color2)
         {
-            Color color = ColorTranslator.FromHtml(color1);
-            return View(color);
+            color1 = Request.Form["color-input1"];
+            color2 = Request.Form["color-input2"];
+
+            ViewBag.show = false;
+            if (color1 != null)
+            {
+                Color color = ColorTranslator.FromHtml(color1);
+                ViewBag.show = true;
+                ViewBag.test = color1;
+                ViewData["test"] = color;
+            }
+            return View();
         }
 
        

@@ -28,12 +28,6 @@ namespace WebApplication1_HW4.Controllers
 
             return View();
         }
-
-        public ActionResult ColorChooser()
-        {
-            return View();
-        }
-
       
     }
 }
