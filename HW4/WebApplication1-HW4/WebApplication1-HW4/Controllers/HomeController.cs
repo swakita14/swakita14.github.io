@@ -13,7 +13,6 @@ namespace WebApplication1_HW4.Controllers
         {
             return View();
         }
-
         /// <summary>
         /// This gets the user input and outputs the result. Using query strings takes in miles and returns metric units
         /// </summary>
@@ -62,6 +61,9 @@ namespace WebApplication1_HW4.Controllers
 
             //output the results of the convertion
             ViewData["results"] = (miles + " miles is equal to " + milesToMetric + unit);
+
+
+
 
             return View();
         }
