@@ -9,6 +9,10 @@ namespace WebApplication1_HW4.Controllers
     public class HomeController : Controller
     {
 
+        public ActionResult Index()
+        {
+            return View();
+        }
         /// <summary>
         /// This gets the user input and outputs the result. Using query strings takes in miles and returns metric units
         /// </summary>
