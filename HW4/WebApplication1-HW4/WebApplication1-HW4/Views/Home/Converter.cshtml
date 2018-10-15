@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "Converter";
+}
+
+
+<h2>Convert Miles to Metric</h2>
+
+<br />
+<div class="container">
+    <!--This creates the form-->
+    <form method="get" action="~/Home/Converter" id="input-form">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="miles-input">Miles:</label>
+                    <!--This takes in the user input for miles-->
+                    <input type="number" class="form-control" name="miles" id="miles-input" placeholder="Enter Miles" required>
+                    <br />
+                </div>
+            </div>
+        
+
+            <!--These radion buttons verifyies which metric unit the user is converting to-->
+            <div class="col-md-6">
+                <h4>Select a Unit:</h4>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="metric-unit-radio" id="mm" value="mm" checked >
+                    <label class="form-check-label" for="mm1">
+                        millimeters
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="metric-unit-radio" id="cm" value="cm">
+                    <label class="form-check-label" for="cm">
+                        centimeters
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="metric-unit-radio" id="mt" value="mt" >
+                    <label class="form-check-label" for="mt">
+                        meters
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="metric-unit-radio" id="km" value="km" >
+                    <label class="form-check-label" for="km">
+                        kilometers
+                    </label>
+                </div>
+                <br />
+            </div>
+         
+        </div>
+        <br />
+
+        <div class="text-center">
+            <input type="submit" value="Submit" class="btn btn-primary" id="btn"/>
+        </div>      
+    </form>
+
+    
+</div>
+<br />
+<div>
+    @*This result will only show if the user submits the form with valid information. Resulting conversion*@
+    @if (ViewBag.Show)
+    {
+    <h3>@ViewData["results"]</h3>
+    }
+
+</div>
+
+
+
+
+
+
