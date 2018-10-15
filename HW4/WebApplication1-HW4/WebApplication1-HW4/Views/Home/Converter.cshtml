@@ -8,18 +8,20 @@
 
 <br />
 <div class="container">
+    <!--This creates the form-->
     <form method="get" action="~/Home/Converter" id="input-form">
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="miles-input">Miles:</label>
+                    <!--This takes in the user input for miles-->
                     <input type="number" class="form-control" name="miles" id="miles-input" placeholder="Enter Miles" required>
                     <br />
                 </div>
             </div>
         
 
-       
+            <!--These radion buttons verifyies which metric unit the user is converting to-->
             <div class="col-md-6">
                 <h4>Select a Unit:</h4>
                 <div class="form-check">
@@ -61,6 +63,7 @@
 </div>
 <br />
 <div>
+    @*This result will only show if the user submits the form with valid information. Resulting conversion*@
     @if (ViewBag.Show)
     {
     <h3>@ViewData["results"]</h3>
