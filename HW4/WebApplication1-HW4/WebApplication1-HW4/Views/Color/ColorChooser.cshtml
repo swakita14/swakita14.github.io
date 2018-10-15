@@ -10,6 +10,7 @@
 
 <div class="row">
     <div class="col-md-6">
+        @*This is the start of the input form that uses Razor Helper for the form and the input *@
         @using (Html.BeginForm("ColorChooser", "Color", FormMethod.Post, new { id = 0, @class = "myForm" }))
         {
             <div class="form-group">
@@ -27,7 +28,9 @@
 
 
         }
+        
 
+        @*This will show the color blocks of the input color and the color that has been mixed*@
         @if (ViewBag.show)
         {
             <br />
