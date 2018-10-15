@@ -104,23 +104,7 @@ namespace WebApplication1_HW4.Controllers
 
         }
 
-        private Color GetRgb(double r, double g, double b)
-        {
-            return Color.FromArgb(255, (byte)(r * 255.0), (byte)(g * 255.0), (byte)(b * 255.0));
-        }
-
-        public void FromHtml_Example(PaintEventArgs e)
-        {
-            // Create a string representation of an HTML color.
-            string htmlColor = "Blue";
-
-            // Translate htmlColor to a GDI+ Color structure.
-            Color myColor = ColorTranslator.FromHtml(htmlColor);
-
-            // Fill a rectangle with myColor.
-            e.Graphics.FillRectangle(new SolidBrush(myColor), 0, 0,
-                100, 100);
-        }
+       
 
 
 
