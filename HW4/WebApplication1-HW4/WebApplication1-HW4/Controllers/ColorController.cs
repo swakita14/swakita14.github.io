@@ -54,6 +54,8 @@ namespace WebApplication1_HW4.Controllers
             int final_B;
             int final_G;
 
+
+            //color addition, if the value goes over 255, it gets set to 255 else addition happens
             if (rgb_color1.A + rgb_color2.A >= 255)
             {
                 final_A = 255;
