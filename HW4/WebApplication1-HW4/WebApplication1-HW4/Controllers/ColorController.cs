@@ -40,7 +40,9 @@ namespace WebApplication1_HW4.Controllers
         public ActionResult ColorChooser(string color1, string color2)
         {
 
-            //takes the user input and assigns it to local variable
+           
+
+                //takes the user input and assigns it to local variable
             color1 = Request.Form["color-input1"];
             color2 = Request.Form["color-input2"];
 
@@ -96,11 +98,12 @@ namespace WebApplication1_HW4.Controllers
             //converts the calculated argb value back to hex
             string finale = ColorTranslator.ToHtml(Color.FromArgb(final_A, final_R, final_G, final_B));
 
-           
 
-            
-            if (color1 != null && color2!=null)
+
+            if (color1 != null && color2 != null)
             {
+
+
                 //makes the result appear
                 ViewBag.show = true;
 
