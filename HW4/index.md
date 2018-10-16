@@ -128,3 +128,12 @@ git merge color-chooser
 
 ## Screenshots of Working Page
 
+1. Home Page
+![img1](screenshots/sc1.PNG)
+
+2. Miles to Metric Page 
+![img2](screenshots/sc2.PNG)
+
+3. Color Chooser Page
+![img3](screenshots/sc3.PNG)
+
