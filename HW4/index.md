@@ -1,4 +1,6 @@
-# This is the README for HW4
+# HW4
+
+* [Demo Video](https://youtu.be/WKAEgg2KWg4)
 
 ## Preparation
 
@@ -55,5 +57,71 @@ ViewData["results"] = (miles + " miles is equal to " + milesToMetric + unit);
 ```
 
 
-## Demo Video
-[Video](https://youtu.be/WKAEgg2KWg4)
+
+## Simple Server-Side Dynamic page using HTTP POST
+
+1. The next task at hand was to use the POST method and create a form that mixes hexidecimal colors and outputs the resulting color. 
+
+2. As same as above, I decided to create the View first and add values such as "name" and "id" on each elements as I went
+
+3. This second part required us to use Razor's HTML Helpers for all form input elements and the form itself. Not going to lie, this was challenging at first but you realize its easier to build 
+
+```c#
+@*This is the start of the input form that uses Razor Helper for the form and the input *@
+        @using (Html.BeginForm("ColorChooser", "Color", FormMethod.Post, new { id = 0, @class = "myForm" }))
+        {
+            <div class="form-group">
+                <label for="input-color1">First Color:</label>
+                @Html.TextBox("color-input1", "", new { @class = "form-control", @pattern = "#[0-9A-Fa-f]{6}", @placeholder = "First Color", required = "required" })
+            </div>
+        }
+```
+
+4. Once I had to form created, I decided to move on to the Controller. Since the requirement was to create a new Controller..... thats what I did and named it "Color"
+
+5. First I took the user input and assigned it to a local variable
+```c#
+ //takes the user input and assigns it to local variable
+ color1 = Request.Form["color-input1"];
+ color2 = Request.Form["color-input2"];
+```
+
+6. I then extraced the argb value out of the colors to do some addition with them to create the final color
+```c#
+ //changes hex to argb format to do some addition with it
+ Color rgb_color1 = ColorTranslator.FromHtml(color1);
+ Color rgb_color2 = ColorTranslator.FromHtml(color2);
+ ```
+
+ 7. I then wrote a conditional statement that will add the values of the argb unless it was over 255, which then I set it to 255
+```c#
+ //color addition, if the value goes over 255, it gets set to 255 else addition happens
+  if (rgb_color1.A + rgb_color2.A >= 255)
+  {
+    final_A = 255;
+  }
+  else
+  {
+   final_A = rgb_color1.A + rgb_color2.A;
+   }
+```
+
+8. Then I coverted the argb value back to hex to show the color 
+```c#
+//converts the calculated argb value back to hex
+string finale = ColorTranslator.ToHtml(Color.FromArgb(final_A, final_R, final_G, final_B));
+```
+
+9. Finally, I created the object and sent it back with the color as the background to the View
+```c#
+ViewBag.shape3 = "width:75px; height: 75px; border: 1px solid #000; background: " + finale + "; ";
+```
+
+
+## Git Merge 
+
+1. As always after all the coding and testing is done on the branches, I merged it back to master
+
+```bash
+git merge color-chooser
+```
