@@ -34,3 +34,13 @@ Our next task was to take a Java program and convert it into C# in order to get 
 
 * [Journal](https://swakita14.github.io/HW3/)
 
+### HW4:
+
+Our next task was to take a Java program and convert it into C# in order to get used to the language and prepare ourselves for the upcoming MVC web apps that use C# extenstively 
+
+* [Source Code](https://github.com/swakita14/swakita14.github.io/tree/master/HW4)
+
+* [Demo Video](https://youtu.be/WKAEgg2KWg4)
+
+* [Journal](https://swakita14.github.io/HW4/)
+
