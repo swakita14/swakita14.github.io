@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("HW4")]
+[assembly: AssemblyTitle("WebApplication1_HW4")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("HW4")]
+[assembly: AssemblyProduct("WebApplication1_HW4")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("a70b451d-121c-4dda-a4d6-6eaeeaaae2f0")]
+[assembly: Guid("22e104f1-1d5e-4bab-8d8e-4db642da6984")]
 
 // Version information for an assembly consists of the following four values:
 //

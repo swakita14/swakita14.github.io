@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace HW4
+namespace WebApplication1_HW4
 {
     public class BundleConfig
     {
