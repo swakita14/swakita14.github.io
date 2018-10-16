@@ -125,3 +125,6 @@ ViewBag.shape3 = "width:75px; height: 75px; border: 1px solid #000; background: 
 ```bash
 git merge color-chooser
 ```
+
+## Screenshots of Working Page
+
