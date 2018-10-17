@@ -13,7 +13,7 @@
 
 ## Simple Server-Side Dynamic page using HTTP GET
 
-1. This assignment was to create a "Miles to MEtric Converter" page using the HTTP GET
+1. This assignment was to create a "Miles to Metric Converter" page using the HTTP GET
 2. I used one user input and 4 radio buttons(for the metric units)
 3. I then added some client side validation on the form input in order to assure that it had to be input before the form was processed, and that only numbers were allowed to be input
 ```html
@@ -32,7 +32,7 @@
 
 ```c#
  //Takes in user input miles
-double miles = Convert.ToInt32(Request.QueryString["miles"]);
+double miles = Convert.ToDouble(Request.QueryString["miles"]);
 
  //this recognizes the value of the radio button that the user has selected, in order to see which unit we are converting to
 string metricUnit = Request.QueryString["metric-unit-radio"];
@@ -72,7 +72,7 @@ ViewData["results"] = (miles + " miles is equal to " + milesToMetric + unit);
         {
             <div class="form-group">
                 <label for="input-color1">First Color:</label>
-                @Html.TextBox("color-input1", "", new { @class = "form-control", @pattern = "#[0-9A-Fa-f]{6}", @placeholder = "First Color", required = "required" })
+                @Html.TextBox("color-input1", "", new { @class = "form-control", @pattern = "#[0-9A-Fa-f]{3,6}", @placeholder = "First Color", required = "required" })
             </div>
         }
 ```
