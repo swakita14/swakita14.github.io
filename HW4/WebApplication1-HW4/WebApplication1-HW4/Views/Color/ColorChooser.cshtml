@@ -14,12 +14,12 @@
         @using (Html.BeginForm("ColorChooser", "Color", FormMethod.Post, new { id = 0, @class = "myForm" }))
         {
             <div class="form-group">
-                <label for="input-color1">First Color:</label>
+                @Html.Label("color-input1","First Color:")
                 @Html.TextBox("color-input1", "", new { @class = "form-control", @pattern = "#[0-9A-Fa-f]{3,6}", @placeholder = "First Color", required = "required" })
             </div>
 
             <div class="form-group">
-                <label for="input-color2">Second Color:</label>
+                @Html.Label("color-input2", "Second Color:")
                 @Html.TextBox("color-input2", "", new { @class = "form-control", @pattern = "#[0-9A-Fa-f]{3,6}", @placeholder = "Second Color", required = "required" })
             </div>
             <br />
