@@ -14,13 +14,13 @@
         @using (Html.BeginForm("ColorChooser", "Color", FormMethod.Post, new { id = 0, @class = "myForm" }))
         {
             <div class="form-group">
-                @Html.Label("color-input1","First Color:")
-                @Html.TextBox("color-input1", "", new { @class = "form-control", @pattern = "#[0-9A-Fa-f]{3,6}", @placeholder = "First Color", required = "required" })
+                <label for="input-color1">First Color:</label>
+                @Html.TextBox("color-input1", "", new { @class = "form-control", @pattern = "#[0-9A-Fa-f]{3-6}", @placeholder = "First Color", required = "required" })
             </div>
 
             <div class="form-group">
-                @Html.Label("color-input2", "Second Color:")
-                @Html.TextBox("color-input2", "", new { @class = "form-control", @pattern = "#[0-9A-Fa-f]{3,6}", @placeholder = "Second Color", required = "required" })
+                <label for="input-color2">Second Color:</label>
+                @Html.TextBox("color-input2", "", new { @class = "form-control", @pattern = "#[0-9A-Fa-f]{3-6}", @placeholder = "Second Color", required = "required" })
             </div>
             <br />
             <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
@@ -30,6 +30,19 @@
         }
         
 
+         @*This will show the color blocks of the input color and the color that has been mixed*@
+        @if (ViewBag.show)
+        {
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-sm-5" style="@ViewBag.shape"></div>
+                <div class="col-sm-5" style="width:50px; height: 100px;"><h2>+</h2></div>
+                <div class="col-sm-5" style="@ViewBag.shape2"></div>
+                <div class="col-sm-5" style="width:50px; height: 100px;"><h2>=</h2></div>
+                <div class="col-sm-5" style="@ViewBag.shape3"></div>
+            </div>
 
+        }
     </div>
 </div>
