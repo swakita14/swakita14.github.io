@@ -18,12 +18,7 @@ namespace Campus_Applications.Controllers
         // GET: Requests
         public ActionResult Index()
         {
-            return View(db.Requests.ToList());
-        }
-
-        public ActionResult ViewRequests()
-        {
-            return View(db.Requests.ToList());
+            return View(db.Requests.ToList().OrderBy(x => x.SignedDate));
         }
 
         // GET: Requests/Details/5
@@ -52,7 +47,7 @@ namespace Campus_Applications.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,FirstName,LastName,ApartmentName,Explanation,UnitNumber,FormSubmitted")] Request request)
+        public ActionResult Create([Bind(Include = "ID,FirstName,LastName,PhoneNumber, ApartmentName,Explanation,UnitNumber,SignedDate")] Request request)
         {
             if (ModelState.IsValid)
             {
@@ -84,7 +79,7 @@ namespace Campus_Applications.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,FirstName,LastName,ApartmentName,Explanation,UnitNumber,FormSubmitted")] Request request)
+        public ActionResult Edit([Bind(Include = "ID,FirstName,LastName,PhoneNumber,ApartmentName,Explanation,UnitNumber,SignedDate")] Request request)
         {
             if (ModelState.IsValid)
             {

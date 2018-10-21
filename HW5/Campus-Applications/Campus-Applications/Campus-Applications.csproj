@@ -216,7 +216,6 @@
     <Content Include="Views\Requests\Details.cshtml" />
     <Content Include="Views\Requests\Edit.cshtml" />
     <Content Include="Views\Requests\Index.cshtml" />
-    <Content Include="Views\Requests\ViewRequests.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

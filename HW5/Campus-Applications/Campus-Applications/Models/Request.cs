@@ -18,6 +18,9 @@ namespace Campus_Applications.Models
         public string LastName { get; set; }
 
         [Required]
+        public string PhoneNumber { get; set; }
+
+        [Required]
         public string ApartmentName { get; set; }
 
         [Required]
