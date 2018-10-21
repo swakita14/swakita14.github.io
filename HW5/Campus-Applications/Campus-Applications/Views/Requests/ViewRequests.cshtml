@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Campus_Applications.Models.Request>
 
 @{
-    ViewBag.Title = "ViewRequests";
+    ViewBag.Title = "View Requests";
 }
 
-<h2>Index</h2>
+<h2>View Requests</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -50,7 +50,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.UnitNumber)
             </td>
-          
+            <td>
+                @Html.DisplayFor(modelItem => item.SignedDate)
+            </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
                 @Html.ActionLink("Details", "Details", new { id = item.ID }) |
@@ -60,4 +62,5 @@
     }
 
 </table>
+
 
