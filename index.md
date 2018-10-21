@@ -36,7 +36,7 @@ Our next task was to take a Java program and convert it into C# in order to get 
 
 ### HW4:
 
-Our next task was to take a Java program and convert it into C# in order to get used to the language and prepare ourselves for the upcoming MVC web apps that use C# extenstively 
+This week we dived deeper into using ASP.NET MVC 5. By using methods such as "GET" and "POST" I was able to learn how to send data from the browser to the server and from the server to the browser, in different ways, so I can see the options I have when creating dynamic web pages with forms and form data
 
 * [Source Code](https://github.com/swakita14/swakita14.github.io/tree/master/HW4)
 
