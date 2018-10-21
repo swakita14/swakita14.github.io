@@ -18,7 +18,7 @@ namespace Campus_Applications.Models
         public string LastName { get; set; }
 
         [Required]
-        public string ApartmentName { get; set;}
+        public string ApartmentName { get; set; }
 
         [Required]
         public string Explanation { get; set; }
@@ -26,6 +26,13 @@ namespace Campus_Applications.Models
         [Required]
         public int UnitNumber { get; set; }
 
-        public DateTime SignedDate { get; set; }
+        private DateTime date = DateTime.Now;
+
+        public DateTime SignedDate
+        {
+            get { return date; }
+            set { date = value; }
+        }
     }
+  
 }

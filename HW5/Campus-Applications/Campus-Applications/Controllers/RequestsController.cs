@@ -21,6 +21,11 @@ namespace Campus_Applications.Controllers
             return View(db.Requests.ToList());
         }
 
+        public ActionResult ViewRequests()
+        {
+            return View(db.Requests.ToList());
+        }
+
         // GET: Requests/Details/5
         public ActionResult Details(int? id)
         {

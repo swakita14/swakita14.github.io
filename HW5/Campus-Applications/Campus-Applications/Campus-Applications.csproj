@@ -156,7 +156,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RequestsController.cs" />
     <Compile Include="DAL\RequestdbContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -217,6 +216,7 @@
     <Content Include="Views\Requests\Details.cshtml" />
     <Content Include="Views\Requests\Edit.cshtml" />
     <Content Include="Views\Requests\Index.cshtml" />
+    <Content Include="Views\Requests\ViewRequests.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
