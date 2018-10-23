@@ -4,11 +4,9 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Current Requests</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -28,6 +26,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.UnitNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CallMe)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.SignedDate)
@@ -56,13 +57,12 @@
             @Html.DisplayFor(modelItem => item.UnitNumber)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SignedDate)
+            @Html.DisplayFor(modelItem => item.CallMe)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            @Html.DisplayFor(modelItem => item.SignedDate)
         </td>
+    
     </tr>
 }
 

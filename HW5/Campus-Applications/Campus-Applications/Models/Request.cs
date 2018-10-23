@@ -28,6 +28,8 @@ namespace Campus_Applications.Models
 
         [Required]
         public int UnitNumber { get; set; }
+ 
+        public bool CallMe { get; set; }
 
         private DateTime date = DateTime.Now;
 
