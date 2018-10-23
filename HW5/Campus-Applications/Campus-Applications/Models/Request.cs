@@ -22,7 +22,7 @@ namespace Campus_Applications.Models
 
         [Required]
         [DisplayName("Phone Number")]
-        [RegularExpression(@"^[2-9]\d{2}-\d{3}-\d{4}$")]
+        [RegularExpression(@"^[2-9]\d{2}-\d{3}-\d{4}$", ErrorMessage = "Please use the format: XXX-XXX-XXXX")]
         public string PhoneNumber { get; set; }
 
         [Required]
@@ -34,7 +34,6 @@ namespace Campus_Applications.Models
         public string Explanation { get; set; }
 
         [Required]
-        [StringLength(5)]
         [DisplayName("Unit Number")]
         public int UnitNumber { get; set; }
 
@@ -42,7 +41,7 @@ namespace Campus_Applications.Models
         public bool CallMe { get; set; }
 
         private DateTime date = DateTime.Now;
-
+        [DisplayName("Submittion Date")]
         public DateTime SignedDate
         {
             get { return date; }

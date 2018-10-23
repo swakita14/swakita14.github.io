@@ -11,31 +11,40 @@ using Campus_Applications.Models;
 
 namespace Campus_Applications.Controllers
 {
-    public class RequestsController : Controller
+    public class Requests1Controller : Controller
     {
         private RequestdbContext db = new RequestdbContext();
 
-        // GET: Requests
+        // GET: Requests1
         public ActionResult Index()
         {
-            return View(db.Requests.ToList().OrderBy(x => x.SignedDate));
+            return View(db.Requests.ToList());
         }
 
-        public ActionResult Home()
+        // GET: Requests1/Details/5
+        public ActionResult Details(int? id)
         {
-            return View(db.Requests);
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Request request = db.Requests.Find(id);
+            if (request == null)
+            {
+                return HttpNotFound();
+            }
+            return View(request);
         }
 
-
-
-
-        // GET: Requests/Create
+        // GET: Requests1/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Requests/Create
+        // POST: Requests1/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,FirstName,LastName,PhoneNumber,ApartmentName,Explanation,UnitNumber,CallMe,SignedDate")] Request request)
@@ -47,6 +56,37 @@ namespace Campus_Applications.Controllers
                 return RedirectToAction("Index");
             }
 
+            return View(request);
+        }
+
+        // GET: Requests1/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Request request = db.Requests.Find(id);
+            if (request == null)
+            {
+                return HttpNotFound();
+            }
+            return View(request);
+        }
+
+        // POST: Requests1/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "ID,FirstName,LastName,PhoneNumber,ApartmentName,Explanation,UnitNumber,CallMe,SignedDate")] Request request)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(request).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
             return View(request);
         }
 
@@ -84,9 +124,5 @@ namespace Campus_Applications.Controllers
             }
             base.Dispose(disposing);
         }
-
-
     }
-
-  
 }
