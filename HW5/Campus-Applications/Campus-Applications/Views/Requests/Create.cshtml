@@ -55,7 +55,6 @@
         <div class="form-group col-md-12">
             @Html.LabelFor(model => model.Explanation)
             @Html.TextAreaFor(model => model.Explanation, new { @class = "form-control", @rows = 10, placeholder = "Enter Problem Description" })
-            @*@Html.TextBoxFor(model => model.Explanation, "", new { @class = "form-control", @placeholder = "Enter Problem Description", })*@
             @Html.ValidationMessageFor(model => model.Explanation, "", new { @class = "text-danger" })
         </div>
 
@@ -68,7 +67,6 @@
 
             @Html.LabelFor(model => model.CallMe)
             @Html.CheckBoxFor(model => model.CallMe)
-            @Html.ValidationMessageFor(model => model.CallMe, "", new { @class = "text-danger" })
 
         </div>
 
