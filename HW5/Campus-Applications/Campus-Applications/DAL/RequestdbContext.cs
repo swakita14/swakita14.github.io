@@ -16,6 +16,6 @@ namespace Campus_Applications.DAL
 
         }
 
-        public virtual DbSet<Request> Requests { get; set; }
+        public DbSet<Request> Requests { get; set; }
     }
 }
