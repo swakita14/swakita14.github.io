@@ -23,7 +23,7 @@ namespace Campus_Applications.Controllers
 
         public ActionResult Home()
         {
-            return View(db.Requests);
+            return View();
         }
 
 
@@ -48,41 +48,6 @@ namespace Campus_Applications.Controllers
             }
 
             return View(request);
-        }
-
-        // GET: Requests1/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Request request = db.Requests.Find(id);
-            if (request == null)
-            {
-                return HttpNotFound();
-            }
-            return View(request);
-        }
-
-        // POST: Requests1/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Request request = db.Requests.Find(id);
-            db.Requests.Remove(request);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
 
 

@@ -21,6 +21,27 @@
     padding-top:10px;
 }
 
+#ApartmentName.form-control{
+
+    max-width: 600px;
+
+}
+
+#UnitNumber.form-control{
+
+    max-width: 570px;
+}
+
+#submit-button{
+    text-align: center;
+}
+
+.btn{
+   text-align:center;
+}
+
+
+
 #sub-title{
     text-align: center
 }
@@ -29,5 +50,6 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+   
+   max-width: 1170px;
 }
