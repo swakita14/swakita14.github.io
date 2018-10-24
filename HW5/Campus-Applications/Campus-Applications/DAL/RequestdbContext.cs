@@ -11,11 +11,11 @@ namespace Campus_Applications.DAL
     public class RequestdbContext : DbContext
     {
 
-        public RequestdbContext() : base("name=RequestdbContext")
+        public RequestdbContext() : base("name=Requests")
         {
 
         }
 
-        public DbSet<Request> Requests { get; set; }
+        public virtual DbSet<Request> Requests { get; set; }
     }
 }

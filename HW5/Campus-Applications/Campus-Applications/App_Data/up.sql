@@ -5,7 +5,7 @@ CREATE TABLE dbo.Requests (
 	[PhoneNumber]	NVARCHAR (MAX) NOT NULL,
     [ApartmentName]	NVARCHAR (MAX) NOT NULL,
     [Explanation]	NVARCHAR (MAX) NOT NULL,
-	[CallMe]		INT			   NOT NULL,
+	[CallMe]		BIT			   NOT NULL,
     [UnitNumber]    INT            NOT NULL,
     [SignedDate]    DATETIME       NULL,
 
