@@ -13,29 +13,29 @@ namespace Campus_Applications.Models
         public int ID { get; set; }
 
         //Data Attributtes
-        [Required]
-        [DisplayName("First Name")]
+        [Required(ErrorMessage = "First Name is Required")]
+        [DisplayName("First Name:")]
 
         public string FirstName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Last Name is Required")]
         [DisplayName("Last Name:")]
         public string LastName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Phone Number is Required")]
         [DisplayName("Phone Number:")]
         [RegularExpression(@"^[2-9]\d{2}-\d{3}-\d{4}$", ErrorMessage = "Please use the format: XXX-XXX-XXXX")]
         public string PhoneNumber { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Apartment Name is Required")]
         [DisplayName("Apartment Name:")]
         public string ApartmentName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "A Description is Required")]
         [DisplayName("Problem Description:")]
         public string Explanation { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Unit Number is Required")]
         [DisplayName("Unit Number:")]
         public int UnitNumber { get; set; }
 
