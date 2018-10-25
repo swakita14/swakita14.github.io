@@ -42,8 +42,8 @@ namespace Campus_Applications.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Requests.Add(request);
-                db.SaveChanges();
+                db.Requests.Add(request); //stages it
+                db.SaveChanges(); //Fully commits to database
                 return RedirectToAction("Index");
             }
 
