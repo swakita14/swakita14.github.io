@@ -1,4 +1,4 @@
-CREATE TABLE dbo.Requests (
+CREATE TABLE [dbo].[Requests] (
     [ID]            INT            IDENTITY (1, 1) NOT NULL,
     [FirstName]		NVARCHAR (MAX) NOT NULL,
     [LastName]		NVARCHAR (MAX) NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE dbo.Requests (
     [UnitNumber]    INT            NOT NULL,
     [SignedDate]    DATETIME       NULL,
 
-    CONSTRAINT [PK_dbo.Request] PRIMARY KEY CLUSTERED (ID ASC)
+    CONSTRAINT [PK_dbo.Request] PRIMARY KEY CLUSTERED ([ID] ASC)
 	
 );
 

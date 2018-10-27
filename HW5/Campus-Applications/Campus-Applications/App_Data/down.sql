@@ -1,1 +1,1 @@
-DROP TABLE dbo.Requests;
+DROP TABLE [dbo].[Requests];
