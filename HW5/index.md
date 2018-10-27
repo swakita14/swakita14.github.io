@@ -32,6 +32,7 @@ CREATE TABLE [dbo].[Requests] (
 3. I also wrote out a query that would drop the entire table and clear things out.
 
 ```sql
+
 DROP TABLE [dbo].[Requests];
 
 ```
@@ -70,6 +71,7 @@ INSERT INTO dbo.Requests(FirstName, LastName, PhoneNumber, ApartmentName, Explan
 ```
 
 3. This is the View that utilizes the model:
+
 ```c#
         <div class="form-group col-md-4">
             @Html.LabelFor(model => model.PhoneNumber)
@@ -105,6 +107,7 @@ INSERT INTO dbo.Requests(FirstName, LastName, PhoneNumber, ApartmentName, Explan
         /// </summary>
         public virtual DbSet<Request> Requests { get; set; }
 ```
+
 4. If you go to the database and click property it should give you the connection string and you just copy and paste it in the Web.config file to tie the database to the project 
 
 ```html
