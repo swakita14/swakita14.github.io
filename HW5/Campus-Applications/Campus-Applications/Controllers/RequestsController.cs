@@ -15,12 +15,20 @@ namespace Campus_Applications.Controllers
     {
         private RequestdbContext db = new RequestdbContext();
 
+        /// <summary>
+        /// This is the list of all the requests that have been entered into the form
+        /// </summary>
+        /// <returns>the view in order of the signed date</returns>
         // GET: Requests
         public ActionResult Index()
         {
             return View(db.Requests.ToList().OrderBy(x => x.SignedDate));
         }
 
+        /// <summary>
+        /// This is the homepage or the welcome page of the form
+        /// </summary>
+        /// <returns>view of the homepage</returns>
         public ActionResult Home()
         {
             return View();
@@ -28,13 +36,21 @@ namespace Campus_Applications.Controllers
 
 
 
-
+        /// <summary>
+        /// This is the GET form of the create before the form is submitted
+        /// </summary>
+        /// <returns>the view of the GET version of the create</returns>
         // GET: Requests/Create
         public ActionResult Create()
         {
             return View();
         }
 
+        /// <summary>
+        /// This is the POST version of create, which takes all the form inputs and places it in the dB
+        /// </summary>
+        /// <param name="request">places the all the paramteres into the model</param>
+        /// <returns>redirects to the list that has all the list of requests</returns>
         // POST: Requests/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
