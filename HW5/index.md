@@ -132,6 +132,6 @@ textarea {
 
 ```
 
-![Image](working1.png)
+![Image](working1.PNG)
 
 

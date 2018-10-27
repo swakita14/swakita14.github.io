@@ -44,3 +44,13 @@ This week we dived deeper into using ASP.NET MVC 5. By using methods such as "GE
 
 * [Journal](https://swakita14.github.io/HW4/)
 
+### HW5:
+
+This week, instead of using no datatbase, we created a localdB and added a table and created strong-typed views with it. We created a web form for the tenants to request when there is help needed. We used the controller to pull data out, and to save the data in the dB. 
+
+* [Source Code](https://github.com/swakita14/swakita14.github.io/tree/master/HW5)
+
+* [Demo Video](https://www.youtube.com/watch?v=v9qrLMEKo9g&t=20s)
+
+* [Journal](https://swakita14.github.io/HW5/)
+
