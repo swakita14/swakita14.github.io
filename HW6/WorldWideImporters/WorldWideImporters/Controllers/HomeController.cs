@@ -8,6 +8,11 @@ namespace WorldWideImporters.Controllers
 {
     public class HomeController : Controller
     {
+        /// <summary>
+        /// This is the context file that connects my db to the project
+        /// </summary>
+        private WWIContext db = new WWIContext();
+
         public ActionResult Index()
         {
             return View();
