@@ -1,17 +1,66 @@
-﻿@{
-    ViewBag.Title = "Contact";
+﻿@model WorldWideImporter.Models.CompanyViewModel.ViewModel
+@{
+    ViewBag.Title = "Details";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+@*This View displays all the infrormation about the person including the person basic information, and if he is a primary contact sales person, shows about his company and his top ten sales*@
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<h2>Details</h2>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<div>
+
+    <hr />
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <img src="https://via.placeholder.com/250" alt="@Model.Person.Photo" />
+        </div>
+
+        <div class="col-md-7">
+            <div id="person-description">
+
+                <h3 id="person-subcat">@Model.Person.FullName</h3>
+                <dl class="dl-horizontal">
+
+                    <dt>
+                        @Html.Label("preferred-name", "Preferred Name:")
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Person.PreferredName)
+                    </dd>
+
+                    <dt>
+                        @Html.Label("phone-number", "Phone Number:")
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Person.PhoneNumber)
+                    </dd>
+
+                    <dt>
+                        @Html.Label("fax-number", "Fax Number:")
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Person.FaxNumber)
+                    </dd>
+
+                    <dt>
+                        @Html.Label("email-address", "Email Address:")
+                    </dt>
+
+                    <dd>
+                        <a href="mailto:@Html.DisplayFor(model => model.Person.EmailAddress)">@Html.DisplayFor(model => model.Person.EmailAddress)</a>
+                    </dd>
+
+                    <dt>
+                        @Html.Label("member-since", "Member Since:")
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Person.ValidFrom)
+                    </dd>
+
+                </dl>
+            </div>
