@@ -157,3 +157,79 @@
                 </div>
 
                 <br />
+                <div id="person-description">
+                    <h3 id="person-subcat">Items Purchased</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    @Html.Label("stock-item", "Stock Item ID")
+                                </th>
+
+                                <th scope="col">
+                                    @Html.Label("description", "Description")
+                                </th>
+
+                                <th scope="col">
+                                    @Html.Label("line-profit", "Line Profit")
+                                </th>
+
+                                <th scope="col">
+                                    @Html.Label("sales-person", "Sales Person")
+                                </th>
+                            </tr>
+                        </thead>
+
+                        @foreach (var items in Model.InvoiceLine)
+                        {
+                            <tbody>
+                                <tr>
+
+                                    <td>
+                                        @Html.DisplayFor(item => items.StockItemID)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(item => items.Description)
+                                    </td>
+
+                                    <td>
+                                        @String.Format("{0:C}", items.LineProfit)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(item => items.Invoice.Person4.FullName)
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        }
+
+
+                    </table>
+                </div>
+
+
+
+            }
+
+        </div>
+
+    </div>
+
+
+
+
+</div>
+
+<br />
+
+
+
+<div>
+    <p>
+        @Html.ActionLink("Back to Search", "Index")
+    </p>
+</div>
