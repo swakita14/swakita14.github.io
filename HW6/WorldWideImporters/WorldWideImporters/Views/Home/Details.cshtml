@@ -64,3 +64,59 @@
 
                 </dl>
             </div>
+
+            <br />
+            @if (ViewBag.IsP)
+            {
+
+                <div id="person-description">
+
+                    <h3 id="person-subcat">Company Profile</h3>
+
+                    <dl class="dl-horizontal">
+
+                        <dt>
+                            @Html.Label("customer-name", "Customer Name:")
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Customer.CustomerName)
+                        </dd>
+
+                        <dt>
+                            @Html.Label("phone-number", "Phone Number:")
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Customer.PhoneNumber)
+                        </dd>
+
+                        <dt>
+                            @Html.Label("fax-number", "Fax Number:")
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Customer.FaxNumber)
+                        </dd>
+
+                        <dt>
+                            @Html.Label("website-url", "Website URL:")
+                        </dt>
+
+                        <dd>
+                            <a href="@Model.Customer.WebsiteURL">@Html.DisplayFor(model => model.Customer.WebsiteURL)</a>
+                        </dd>
+
+                        <dt>
+                            @Html.Label("member-since", "Member Since:")
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Customer.ValidFrom)
+                        </dd>
+
+
+                    </dl>
+
+
+                </div>
