@@ -13,9 +13,29 @@ namespace WorldWideImporters.Controllers
         /// </summary>
         private WWIContext db = new WWIContext();
 
-        public ActionResult Index()
+        /// <summary>
+        /// This searches for the users in the db
+        /// </summary>
+        /// <param name="search">the string that is entered to look through the db</param>
+        /// <returns>a view with a person that matches the query string</returns>
+        // GET: People
+        public ActionResult Index(String search)
         {
-            return View();
+            //Using my View Model
+            ViewModel vm = new ViewModel();
+
+
+            search = Request.QueryString["search"];
+            if (search == null || search == "")
+            {
+                ViewBag.show = false;
+                return View();
+            }
+            else
+            {
+                ViewBag.show = true;
+                return View(db.People.Where(p => p.FullName.Contains(search)).ToList());
+            }
         }
 
         public ActionResult About()
