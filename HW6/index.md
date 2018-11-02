@@ -15,20 +15,44 @@
 3. I went to my View, and using the Person model, I created a simple search bar that would look through all the person in my db and output the results like a button to click on 
 
 ```html
+@using (Html.BeginForm("Index", "People", FormMethod.Get, new { @class = "form-inline" }))
+    {<br />
 
+        <div class="form-group">
+            <div class="input-group">
+
+                @Html.TextBox("search", "", new { @class = "form-control", @placeholder = "Enter Client Name", required = "required" })
+                <span class="input-group-btn">
+                    <button class="btn btn-default " type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+
+            </div>
+        </div>
+    }
 ```
 
 4. Then I went to my Controller, and added some methods that would get the ```queryString``` from the input form and use that to look through the db.
 
 ```c#
-
+            search = Request.QueryString["search"];
+            if (search == null || search == "")
+            {
+                ViewBag.show = false;
+                return View();
+            }
+            else
+            {
+                ViewBag.show = true;
+                return View(db.People.Where(p => p.FullName.Contains(search)).ToList());
+            }
 
 ```
 
 5. From part of the scaffold code from the Details Action method, I was able to gain the basic concept and information on how the code worked, and of course I rewrote the details because who likes the scaffold code look?
 
 ```c#
-
+            //find the person
+            vm.Person = db.People.Find(id);
 
 ```
 
@@ -42,7 +66,8 @@
 2. So I wrote a LINQ query that would find out if the person that is searched for is the primary contact person (that their PrimaryContactPersonID in Customer is the ID)
 
 ```c#
-
+                int cid = vm.Person.Customers2.FirstOrDefault().CustomerID;
+                vm.Customer = db.Customers.Find(cid);
 
 ```
 
@@ -50,17 +75,82 @@
 4. Then I was able to access the Customer objects information from there. 
 
 ```html
+                        <dt>
+                            @Html.Label("customer-name", "Customer Name:")
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Customer.CustomerName)
+                        </dd>
+
+                        <dt>
+                            @Html.Label("phone-number", "Phone Number:")
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Customer.PhoneNumber)
+                        </dd>
 
 
 ```
 
 5. Finally for the Purchases, I used to ViewBags that I assigned values for using a LINQ statement. This showed the count of the order and the total gross sales and profit that they have made from this customer.
 
-```html
+```c#
+                //find the gross sales
+                ViewBag.GrossSales = vm.Customer.Orders.SelectMany(il => il.Invoices).SelectMany(ils => ils.InvoiceLines).Sum(i => i.ExtendedPrice);
 
+                //find the gross profit
+                ViewBag.GrossProfit = vm.Customer.Orders.SelectMany(il => il.Invoices).SelectMany(ils => ils.InvoiceLines).Sum(i => i.LineProfit);
+```
+
+
+
+```html
+                        <dt>
+                            @Html.Label("gross-sales", "Gross Sales:")
+                        </dt>
+
+                        <dd>
+                            @String.Format("{0:C}", ViewBag.GrossSales)
+                        </dd>
+
+                        <dt>
+                            @Html.Label("gross-profit", "Gross Profit:")
+                        </dt>
+
+                        <dd>
+                            @String.Format("{0:C}", ViewBag.GrossProfit)
+                        </dd>
 
 ```
 
 6. Finally I added the top 10 most profitable items the customer has purchased 
 
+```html
+                                    <td>
+                                        @Html.DisplayFor(item => items.StockItemID)
+                                    </td>
 
+                                    <td>
+                                        @Html.DisplayFor(item => items.Description)
+                                    </td>
+
+                                    <td>
+                                        @String.Format("{0:C}", items.LineProfit)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(item => items.Invoice.Person4.FullName)
+                                    </td>
+
+```
+## Working Page
+
+![Image](working0.PNG)
+
+![Image](working1.PNG)
+
+![Image](working2.PNG)
+
+![Image](working3.PNG)
