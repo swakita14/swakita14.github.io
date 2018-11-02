@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using WorldWideImporter.Models;
+using WorldWideImporter.Models.CompanyViewModel;
 
-namespace WorldWideImporters.Controllers
+namespace WorldWideImporter.Controllers
 {
-    public class HomeController : Controller
+    public class PeopleController : Controller
     {
         /// <summary>
         /// This is the context file that connects my db to the project
@@ -38,6 +44,12 @@ namespace WorldWideImporters.Controllers
             }
         }
 
+        /// <summary>
+        /// This retrieves the information concerning the person
+        /// </summary>
+        /// <param name="id">takes in an id, then matches the person</param>
+        /// <returns>the ViewModel with PErson, Customer, and InvoiceLines</returns>
+        // GET: People/Details/5
         public ActionResult Details(int? id)
         {
             //my viewmodel
@@ -85,5 +97,4 @@ namespace WorldWideImporters.Controllers
         }
 
     }
-
 }

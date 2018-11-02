@@ -1,0 +1,55 @@
+﻿@model IEnumerable<WorldWideImporter.Models.Person>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@*This View is the searching function of the controller, it takes the string and passes back to the controller, uses a person model*@
+
+   <div class="row page-header">
+       <img src="~/Content/banner4.jpg" height="200" width="1170" />
+   </div>
+
+    <h2 id="title">Client Search</h2>
+
+    @using (Html.BeginForm("Index", "People", FormMethod.Get, new { @class = "form-inline" }))
+    {<br />
+
+        <div class="form-group">
+            <div class="input-group">
+
+                @Html.TextBox("search", "", new { @class = "form-control", @placeholder = "Enter Client Name", required = "required" })
+                <span class="input-group-btn">
+                    <button class="btn btn-default " type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+
+            </div>
+        </div>
+    }
+
+    @if (ViewBag.show)
+    {
+        <br />
+        if (Model.Count() == 0)
+        {
+            <h4 style="color:red">Sorry Couldn't Find a Match</h4>
+
+        }
+        else
+        {
+            <div>
+                <h4>Client Name:</h4>
+            </div>
+            <br />
+            foreach (var person in Model)
+            {
+                <div>
+
+
+                    <a class="btn btn-default btn-lg btn-block" href="People/Details/@person.PersonID" role="button">@person.FullName (@person.PreferredName)</a>
+                </div>
+            }
+        }
+    }
+
+

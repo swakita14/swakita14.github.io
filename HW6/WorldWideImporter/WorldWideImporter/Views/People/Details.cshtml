@@ -1,7 +1,12 @@
 ﻿@model WorldWideImporter.Models.CompanyViewModel.ViewModel
+
 @{
     ViewBag.Title = "Details";
 }
+<div class="row page-header">
+    <img src="~/Content/banner4.jpg" height="200" width="1170" />
+</div>
+
 @*This View displays all the infrormation about the person including the person basic information, and if he is a primary contact sales person, shows about his company and his top ten sales*@
 
 <h2>Details</h2>
@@ -157,6 +162,7 @@
                 </div>
 
                 <br />
+
                 <div id="person-description">
                     <h3 id="person-subcat">Items Purchased</h3>
                     <table class="table">

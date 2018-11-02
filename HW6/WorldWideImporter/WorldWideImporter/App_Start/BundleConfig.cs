@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace WorldWideImporters
+namespace WorldWideImporter
 {
     public class BundleConfig
     {
