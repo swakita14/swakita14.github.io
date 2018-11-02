@@ -120,3 +120,40 @@
 
 
                 </div>
+
+                <br />
+                <div id="person-description">
+
+                    <h3 id="person-subcat">Purchase History Summary</h3>
+
+                    <dl class="dl-horizontal">
+
+                        <dt>
+                            @Html.Label("order-count", "Count:")
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Customer.Orders.Count)
+                        </dd>
+
+                        <dt>
+                            @Html.Label("gross-sales", "Gross Sales:")
+                        </dt>
+
+                        <dd>
+                            @String.Format("{0:C}", ViewBag.GrossSales)
+                        </dd>
+
+                        <dt>
+                            @Html.Label("gross-profit", "Gross Profit:")
+                        </dt>
+
+                        <dd>
+                            @String.Format("{0:C}", ViewBag.GrossProfit)
+                        </dd>
+
+                    </dl>
+
+                </div>
+
+                <br />
