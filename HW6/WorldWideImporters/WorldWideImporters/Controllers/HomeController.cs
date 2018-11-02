@@ -38,7 +38,55 @@ namespace WorldWideImporters.Controllers
             }
         }
 
-        public ActionResult About()
+        public ActionResult Details(int? id)
+        {
+            //my viewmodel
+            ViewModel vm = new ViewModel();
+
+            //find the person
+            vm.Person = db.People.Find(id);
+
+            //if he is a regular person lets not show anymore information
+            ViewBag.IsP = false;
+
+            //if he is a primary contact person
+            if (vm.Person.Customers2.Count() > 0)
+            {
+                //lets show the information
+                ViewBag.IsP = true;
+                int cid = vm.Person.Customers2.FirstOrDefault().CustomerID;
+                vm.Customer = db.Customers.Find(cid);
+
+                //find the gross sales
+                ViewBag.GrossSales = vm.Customer.Orders.SelectMany(il => il.Invoices).SelectMany(ils => ils.InvoiceLines).Sum(i => i.ExtendedPrice);
+
+                //find the gross profit
+                ViewBag.GrossProfit = vm.Customer.Orders.SelectMany(il => il.Invoices).SelectMany(ils => ils.InvoiceLines).Sum(i => i.LineProfit);
+
+                //selects the information on the top ten sales
+                vm.InvoiceLine = vm.Customer.Orders.SelectMany(x => x.Invoices)
+                                                .SelectMany(i => i.InvoiceLines)
+                                                .OrderByDescending(i => i.LineProfit)
+                                                .Take(10)
+                                                .ToList();
+
+            }
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Person person = db.People.Find(id);
+            if (person == null)
+            {
+                return HttpNotFound();
+            }
+            return View(vm);
+        }
+
+    }
+
+    public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
