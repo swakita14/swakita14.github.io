@@ -214,6 +214,10 @@ UpgradeLog*.htm
 *.mdf
 *.ldf
 *.ndf
+<<<<<<< HEAD
+=======
+
+>>>>>>> hw6-feature
 # Business Intelligence projects
 *.rdl.data
 *.bim.layout

@@ -1,0 +1,241 @@
+﻿@model WorldWideImporter.Models.CompanyViewModel.ViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="row page-header">
+    <img src="~/Content/banner4.jpg" height="200" width="1170" />
+</div>
+
+@*This View displays all the infrormation about the person including the person basic information, and if he is a primary contact sales person, shows about his company and his top ten sales*@
+
+<h2>Details</h2>
+
+<div>
+
+    <hr />
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <img src="https://via.placeholder.com/250" alt="@Model.Person.Photo" />
+        </div>
+
+        <div class="col-md-7">
+            <div id="person-description">
+
+                <h3 id="person-subcat">@Model.Person.FullName</h3>
+                <dl class="dl-horizontal">
+
+                    <dt>
+                        @Html.Label("preferred-name", "Preferred Name:")
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Person.PreferredName)
+                    </dd>
+
+                    <dt>
+                        @Html.Label("phone-number", "Phone Number:")
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Person.PhoneNumber)
+                    </dd>
+
+                    <dt>
+                        @Html.Label("fax-number", "Fax Number:")
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Person.FaxNumber)
+                    </dd>
+
+                    <dt>
+                        @Html.Label("email-address", "Email Address:")
+                    </dt>
+
+                    <dd>
+                        <a href="mailto:@Html.DisplayFor(model => model.Person.EmailAddress)">@Html.DisplayFor(model => model.Person.EmailAddress)</a>
+                    </dd>
+
+                    <dt>
+                        @Html.Label("member-since", "Member Since:")
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Person.ValidFrom)
+                    </dd>
+
+                </dl>
+            </div>
+
+            <br />
+            @if (ViewBag.IsP)
+            {
+
+                <div id="person-description">
+
+                    <h3 id="person-subcat">Company Profile</h3>
+
+                    <dl class="dl-horizontal">
+
+                        <dt>
+                            @Html.Label("customer-name", "Customer Name:")
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Customer.CustomerName)
+                        </dd>
+
+                        <dt>
+                            @Html.Label("phone-number", "Phone Number:")
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Customer.PhoneNumber)
+                        </dd>
+
+                        <dt>
+                            @Html.Label("fax-number", "Fax Number:")
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Customer.FaxNumber)
+                        </dd>
+
+                        <dt>
+                            @Html.Label("website-url", "Website URL:")
+                        </dt>
+
+                        <dd>
+                            <a href="@Model.Customer.WebsiteURL">@Html.DisplayFor(model => model.Customer.WebsiteURL)</a>
+                        </dd>
+
+                        <dt>
+                            @Html.Label("member-since", "Member Since:")
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Customer.ValidFrom)
+                        </dd>
+
+
+                    </dl>
+
+
+                </div>
+
+                <br />
+                <div id="person-description">
+
+                    <h3 id="person-subcat">Purchase History Summary</h3>
+
+                    <dl class="dl-horizontal">
+
+                        <dt>
+                            @Html.Label("order-count", "Count:")
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Customer.Orders.Count)
+                        </dd>
+
+                        <dt>
+                            @Html.Label("gross-sales", "Gross Sales:")
+                        </dt>
+
+                        <dd>
+                            @String.Format("{0:C}", ViewBag.GrossSales)
+                        </dd>
+
+                        <dt>
+                            @Html.Label("gross-profit", "Gross Profit:")
+                        </dt>
+
+                        <dd>
+                            @String.Format("{0:C}", ViewBag.GrossProfit)
+                        </dd>
+
+                    </dl>
+
+                </div>
+
+                <br />
+
+                <div id="person-description">
+                    <h3 id="person-subcat">Items Purchased</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    @Html.Label("stock-item", "Stock Item ID")
+                                </th>
+
+                                <th scope="col">
+                                    @Html.Label("description", "Description")
+                                </th>
+
+                                <th scope="col">
+                                    @Html.Label("line-profit", "Line Profit")
+                                </th>
+
+                                <th scope="col">
+                                    @Html.Label("sales-person", "Sales Person")
+                                </th>
+                            </tr>
+                        </thead>
+
+                        @foreach (var items in Model.InvoiceLine)
+                        {
+                            <tbody>
+                                <tr>
+
+                                    <td>
+                                        @Html.DisplayFor(item => items.StockItemID)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(item => items.Description)
+                                    </td>
+
+                                    <td>
+                                        @String.Format("{0:C}", items.LineProfit)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(item => items.Invoice.Person4.FullName)
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        }
+
+
+                    </table>
+                </div>
+
+
+
+            }
+
+        </div>
+
+    </div>
+
+
+
+
+</div>
+
+<br />
+
+
+
+<div>
+    <p>
+        @Html.ActionLink("Back to Search", "Index")
+    </p>
+</div>
