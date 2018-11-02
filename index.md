@@ -54,3 +54,12 @@ This week, instead of using no datatbase, we created a localdB and added a table
 
 * [Journal](https://swakita14.github.io/HW5/)
 
+### HW6:
+
+In this weeks homework assignment, we created another MVC app using a pre-existing relational database. We built and example application that uses a lot of data and showcases the use of an edisting large database using LINQ and MVC moves. 
+
+* [Source Code](https://github.com/swakita14/swakita14.github.io/tree/master/HW6)
+
+* [Demo Video](https://youtu.be/i8jkJDDin_c)
+
+* [Journal](https://swakita14.github.io/HW6/)
