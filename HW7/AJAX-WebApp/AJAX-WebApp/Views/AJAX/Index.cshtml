@@ -13,3 +13,8 @@
         @Html.TextBox("text-input", "", new { @class = "form-control", @placeholder = "Start typing your message here....", required = "required" })
     </div>
 }
+
+@section JavaScript
+{    
+    <script type="text/javascript" src="@Url.Content("/Scripts/ajax-giphy.js")"></script>
+}
