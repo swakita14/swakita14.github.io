@@ -2,8 +2,14 @@
 @{
     ViewBag.Title = "Index";
 }
+<br /><br /><br />
+<h2 id="title">Internet Language Translator</h2>
+<br /><br />
 
-<h2>Index</h2>
+@using (Html.BeginForm("", "", FormMethod.Post, new { id = 0, @class = "myForm" }))
+{
+    <div class="form-group">
 
-
-
+        @Html.TextBox("text-input", "", new { @class = "form-control", @placeholder = "Start typing your message here....", required = "required" })
+    </div>
+}
