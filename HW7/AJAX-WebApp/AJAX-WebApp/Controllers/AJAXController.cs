@@ -23,7 +23,7 @@ namespace AJAX_WebApp.Controllers
         /// <returns>JSON obj with the information needed</returns>
         public JsonResult Search()
         {
-            string apiKey = ""; // Some way to hide the key?
+            string apiKey = "nlFMJaljRdG7yYkuQ2DvUspGg6Ti5qkj"; // Some way to hide the key?
 
 
             //Takes in the user input 

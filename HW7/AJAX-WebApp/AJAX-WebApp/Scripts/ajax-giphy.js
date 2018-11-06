@@ -12,20 +12,29 @@
             //alert("Hello World");
 
             var txt = $('#text-input').val();
-            var urls = "TranslateApi/Sticker?q=" + txt;
+            //var lastitem = txt.split(" ").pop();
+            var apiKey = "nlFMJaljRdG7yYkuQ2DvUspGg6Ti5qkj";
+            var getURL = "https://api.giphy.com/v1/stickers/translate?api_key=" + apiKey + "&s=" + txt;
 
-            alert(txt);
+            //alert(urls);
 
             $.ajax({
+                type: "GET",
                 dataType: "json",
-                url: urls,
-                data: data,
-                success: success
+                url: getURL,
+                success: showGifs
 
             });
 
+        }
 
+        function showGifs(data) {
 
+            
+            
+
+            $("#giphy-place").attr('src', data.data.images.fixed_height_still.url);
+            
 
 
 
