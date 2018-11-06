@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -21,16 +22,18 @@ namespace AJAX_WebApp.Controllers
         /// and parse through it and get the data that we want. 
         /// </summary>
         /// <returns>JSON obj with the information needed</returns>
-        public JsonResult Search()
+        public JsonResult Sticker(string txt)
         {
             string apiKey = "nlFMJaljRdG7yYkuQ2DvUspGg6Ti5qkj"; // Some way to hide the key?
 
 
             //Takes in the user input 
-            string searchString = Request.QueryString["text-input"];
+            ///string searchString = Request.QueryString["txt"];
 
             //Creates the URL for the search function using my own API
-            string getURL = "https://api.giphy.com/v1/stickers/translate?api_key=" + apiKey + "&s=" + searchString;
+            string getURL = "https://api.giphy.com/v1/stickers/translate?api_key=" + apiKey + "&s=" + txt;
+
+            Debug.WriteLine(getURL);
 
             //Makes a request to the URL and receives the responce
             WebRequest request = WebRequest.Create(getURL);

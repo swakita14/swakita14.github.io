@@ -12,10 +12,16 @@
 
         @Html.TextBox("text-input", "", new { @class = "form-control", @placeholder = "Start typing your message here....", required = "required" })
     </div>
+    <button type="button" class="btn btn-primary" id="reset">Clear Input</button>
 
-    <div id="giphy-placeholder">
-        <img id="giphy-place" />
+    <br />
+
+    <div class="container">
+        <div class="row" id="giphy-append">
+            
+        </div>
     </div>
+
 }
 
 @section JavaScript
