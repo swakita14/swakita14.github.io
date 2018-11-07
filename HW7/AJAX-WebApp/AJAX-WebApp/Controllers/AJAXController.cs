@@ -6,11 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using AJAX_WebApp.DAL;
 
 namespace AJAX_WebApp.Controllers
 {
     public class AJAXController : Controller
     {
+        private LogDbContext db = new LogDbContext();
         // GET: AJAX
         public ActionResult Index()
         {
@@ -24,8 +26,9 @@ namespace AJAX_WebApp.Controllers
         /// <returns>JSON obj with the information needed</returns>
         public JsonResult Sticker(string txt)
         {
-            string apiKey = "nlFMJaljRdG7yYkuQ2DvUspGg6Ti5qkj"; // Some way to hide the key?
+            string apiKey = System.Web.Configuration.WebConfigurationManager.AppSettings["APIKEY"];// Some way to hide the key?
 
+            Debug.WriteLine(apiKey);
 
             //Takes in the user input 
             ///string searchString = Request.QueryString["txt"];
@@ -38,6 +41,27 @@ namespace AJAX_WebApp.Controllers
             //Makes a request to the URL and receives the responce
             WebRequest request = WebRequest.Create(getURL);
             WebResponse getResponce = request.GetResponse();
+
+            var dbContext = db.Logs.Create();
+
+            //Assigns the time to the dB
+            dbContext.AccessTime = DateTime.Now;
+
+            //Getting the IP of the user
+            dbContext.IPAddress = Request.UserHostAddress;
+
+            //What the user searched for 
+            dbContext.Request = txt;
+
+            //What the client browser it 
+            dbContext.ClientBrowser = Request.UserAgent;
+
+            //Lets save the changes 
+            db.Logs.Add(dbContext);
+            db.SaveChanges();
+
+   
+
 
             Stream data = request.GetResponse().GetResponseStream();
 

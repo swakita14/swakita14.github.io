@@ -28,7 +28,7 @@
                 });
             }
             else {
-                $('#giphy-append').append('<div class="col-sm-2"><h3>' + lastitem + '</h3 ></div>');
+                $('#giphy-append').append('<div class="col-sm-1"><h3>' + lastitem + '</h3 ></div>');
             }
 
         }
@@ -49,9 +49,13 @@
 
         function showGifs(data) {
 
-            //$('#giphy-append').attr('src', data.data.images.fixed_height_still.url);
+            var emptystr = "";
+            var giphyUrl = data.data.images.fixed_height_still.url;
 
-            //$('#giphy-append').append('<img>' + $(gif).attr('src', data.data.images.fixed_height_still.url) + '</img>');
+            emptystr += "<div class=col-sm-1><img src='" + giphyUrl + "' width=100, height=100/></div>";
+
+
+            $('#giphy-append').append(emptystr);
 
         }
 

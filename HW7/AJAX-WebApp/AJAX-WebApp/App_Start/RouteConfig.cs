@@ -22,7 +22,7 @@ namespace AJAX_WebApp
             routes.MapRoute(
                name: "Search",
                url: "{controller}/{action}/{id}",
-               defaults: new { controller = "AJAX", action = "Sticker", id = UrlParameter.Optional }
+               defaults: new { controller = "TranslateApi", action = "Sticker",}
            );
         }
     }
