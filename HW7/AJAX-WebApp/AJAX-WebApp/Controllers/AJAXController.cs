@@ -14,6 +14,10 @@ namespace AJAX_WebApp.Controllers
     {
         private LogDbContext db = new LogDbContext();
         // GET: AJAX
+        /// <summary>
+        /// This is the View of the homepage
+        /// </summary>
+        /// <returns>a View of the index</returns>
         public ActionResult Index()
         {
             return View();
@@ -27,7 +31,7 @@ namespace AJAX_WebApp.Controllers
         public JsonResult Sticker(string txt)
         {
             //You are not getting my ApiKey
-            string apiKey = System.Web.Configuration.WebConfigurationManager.AppSettings["APIKEY"];// Some way to hide the key?
+            string apiKey = System.Web.Configuration.WebConfigurationManager.AppSettings["APIKEY"];
 
     
             //Creates the URL for the search function using my own API

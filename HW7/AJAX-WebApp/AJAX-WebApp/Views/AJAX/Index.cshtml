@@ -6,6 +6,8 @@
 <h2 id="title">Internet Language Translator</h2>
 <br /><br />
 
+@*This is the View for the internet language translator*@
+
       <body>
           @using (Html.BeginForm("", "", FormMethod.Post, new { id = 0, @class = "myForm" }))
           {
@@ -27,6 +29,7 @@
 
       </body>
 
+@*Adding my own js file to the View*@
 @section JavaScript
 {    
     <script type="text/javascript" src="@Url.Content("/Scripts/ajax-giphy.js")"></script>

@@ -14,15 +14,24 @@ namespace AJAX_WebApp.Models
         /// </summary>
         public int ID { get; set; }
 
+        /// <summary>
+        /// The time that the user input the string and the time that is loggd 
+        /// </summary>
         public DateTime AccessTime { get; set; }
 
-        [Required]
+        /// <summary>
+        /// the string that is input by the user to match the gif
+        /// </summary>
         public string Request { get; set; }
 
-        [Required]
+        /// <summary>
+        /// IP address of the user
+        /// </summary>
         public string IPAddress { get; set; }
 
-        [Required]
+        /// <summary>
+        /// browser of  client 
+        /// </summary>
         public string ClientBrowser { get; set; }
 
 
