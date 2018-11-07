@@ -180,7 +180,6 @@ ViewBag.GrossProfit = vm.Customer.Orders.SelectMany(il => il.Invoices).SelectMan
 
 ```
 
-```
 ## Working Page
 
 ![Image](working1.PNG)
