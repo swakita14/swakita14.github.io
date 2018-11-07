@@ -26,13 +26,10 @@ namespace AJAX_WebApp.Controllers
         /// <returns>JSON obj with the information needed</returns>
         public JsonResult Sticker(string txt)
         {
+            //You are not getting my ApiKey
             string apiKey = System.Web.Configuration.WebConfigurationManager.AppSettings["APIKEY"];// Some way to hide the key?
 
-            Debug.WriteLine(apiKey);
-
-            //Takes in the user input 
-            ///string searchString = Request.QueryString["txt"];
-
+    
             //Creates the URL for the search function using my own API
             string getURL = "https://api.giphy.com/v1/stickers/translate?api_key=" + apiKey + "&s=" + txt;
 
