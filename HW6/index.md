@@ -143,6 +143,7 @@ ViewBag.GrossProfit = vm.Customer.Orders.SelectMany(il => il.Invoices).SelectMan
 <td>
     @Html.DisplayFor(item => items.Invoice.Person4.FullName)
 </td>
+```
 
 ## Extra Credit
 
