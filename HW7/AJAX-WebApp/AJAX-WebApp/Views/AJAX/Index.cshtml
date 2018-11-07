@@ -6,23 +6,26 @@
 <h2 id="title">Internet Language Translator</h2>
 <br /><br />
 
-@using (Html.BeginForm("", "", FormMethod.Post, new { id = 0, @class = "myForm" }))
-{
-    <div class="form-group">
+      <body>
+          @using (Html.BeginForm("", "", FormMethod.Post, new { id = 0, @class = "myForm" }))
+          {
+              <div class="form-group">
 
-        @Html.TextBox("text-input", "", new { @class = "form-control", @placeholder = "Start typing your message here....", required = "required" })
-    </div>
-    <button type="button" class="btn btn-primary" id="reset">Clear Input</button>
+                  @Html.TextBox("text-input", "", new { @class = "form-control", @placeholder = "Start typing your message here....", required = "required" })
+              </div>
+              <button type="button" class="btn btn-primary" id="reset">Clear Input</button>
 
-    <br />
+              <br />
 
-    <p>
-        <div class="container" id="giphy-append">
-          
-        </div>
-    </p>
+              <p>
+                  <div id="giphy-append">
 
-}
+                  </div>
+              </p>
+
+          }
+
+      </body>
 
 @section JavaScript
 {    

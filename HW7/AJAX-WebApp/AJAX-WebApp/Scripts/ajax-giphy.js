@@ -28,7 +28,8 @@
                 });
             }
             else {
-                $('#giphy-append').append('<div class="col-sm-1"><h3>' + lastitem + '</h3 ></div>');
+                var s = "<label>" + lastitem + "</label>";
+                $('#giphy-append').append(" " + s);
             }
 
         }
@@ -52,7 +53,7 @@
             var emptystr = "";
             var giphyUrl = data.data.images.fixed_height_still.url;
 
-            emptystr += "<div class=col-sm-1><img src='" + giphyUrl + "' width=100, height=100/></div>";
+            emptystr += "<img src='" + giphyUrl + "' width=100, height=100/>";
 
 
             $('#giphy-append').append(emptystr);
