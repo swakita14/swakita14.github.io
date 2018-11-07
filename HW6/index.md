@@ -1,6 +1,6 @@
 # HW6
 
-* [Demo Video](https://youtu.be/i8jkJDDin_c)
+* [Demo Video](https://youtu.be/FEwZx4af7WM)
 
 ## Preparation 
 
@@ -143,8 +143,44 @@ ViewBag.GrossProfit = vm.Customer.Orders.SelectMany(il => il.Invoices).SelectMan
 <td>
     @Html.DisplayFor(item => items.Invoice.Person4.FullName)
 </td>
+```
+
+## Extra Credit
+
+1.So for extra credit, we had to add the map of the person by mapping from Customer => DeliveryAddress and get its lattitude and longitude of the DbGeography.
+
+2.I used the LeafLet api to create the map by adding the style sheet first and the actual code for making the map
+
+```html
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin="" />
+    <!-- Leaflet's JS for use with MapBox -->
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+            integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+            crossorigin=""></script>
+</head>
 
 ```
+```js
+<script>
+    var long = @Model.Customer.DeliveryLocation.Longitude;
+    var lat = @Model.Customer.DeliveryLocation.Latitude;
+
+    var map = L.map('map').setView([lat, long], 15);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+    L.marker([lat, long]).addTo(map)
+        .bindPopup('<p>' + @Model.Customer.City.CityName + '</p>').openPopup();
+
+</script>
+
+```
+
 ## Working Page
 
 ![Image](working1.PNG)
@@ -154,3 +190,5 @@ ViewBag.GrossProfit = vm.Customer.Orders.SelectMany(il => il.Invoices).SelectMan
 ![Image](working2.PNG)
 
 ![Image](working3.PNG)
+
+![Image](working4.PNG)
