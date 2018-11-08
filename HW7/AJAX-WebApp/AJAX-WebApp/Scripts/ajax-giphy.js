@@ -17,7 +17,7 @@
             var lastitem = txt.split(" ").pop();
 
             if (e.which === 32) {
-                var source = "AJAX/Sticker/" + txt; //Source
+                var source = "Translate/Sticker/" + txt; //Source
             }
             
             //alert(urls);
@@ -59,6 +59,7 @@
 
             var emptystr = "";
             var giphyUrl = data.data.images.fixed_height_still.url;
+            console.log(giphyUrl);
 
             emptystr += "<img src='" + giphyUrl + "' width=150px, height=150px/>";
 
@@ -72,7 +73,7 @@
         });
 
         function errorOnAjax()
-        {
+        { 
             console.log("error");
         }
     
