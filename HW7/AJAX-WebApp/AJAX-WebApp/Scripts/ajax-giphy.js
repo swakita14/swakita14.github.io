@@ -42,7 +42,7 @@
         function notBoring(word)
         {
 
-            var notBoringWords = ["cat", "lobster", "walking", "banana", "carrots", "running", "jumping", "dog", "moose", "apple" ];
+            var notBoringWords = ["cat", "lobster", "walking", "banana", "carrots", "running", "jumping", "dog", "moose", "apple", "walk" ];
             var notBoring = false;
             for (var i = 0; i < notBoringWords.length; i++) {
                 if (word === notBoringWords[i]) {

@@ -48,6 +48,8 @@ namespace AJAX_WebApp.Controllers
             //What the client browser it 
             dbContext.ClientBrowser = Request.UserAgent;
 
+            
+
             //Lets save the changes 
             db.Logs.Add(dbContext);
             db.SaveChanges();

@@ -21,8 +21,8 @@ namespace AJAX_WebApp
 
             routes.MapRoute(
                name: "Search",
-               url: "{controller}/{action}/{id}",
-               defaults: new { controller = "AJAX", action = "Sticker",}
+               url: "{controller}/{action}/{search}",
+               defaults: new { controller = "Translate", action = "Sticker",}
            );
         }
     }
