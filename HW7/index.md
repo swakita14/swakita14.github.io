@@ -8,7 +8,8 @@
 2. As we have the API key in our hands, it is important to hide the API key instead of pasting it directly in either our js or controller. 
 
 ```c#
-
+ //You are not getting my ApiKey
+string apiKey = System.Web.Configuration.WebConfigurationManager.AppSettings["APIKEY"];
 
 ```
 
@@ -16,7 +17,16 @@
 4. The next step is to connect the custom js file that we are using and the View with a razor with an ```@section``` tag and adding the path to our js file
 
 ```html
+@*Adding my own js file to the View*@
+@section JavaScript
+{    
+    <script type="text/javascript" src="@Url.Content("/Scripts/ajax-giphy.js")"></script>
+}
 
+```
+
+```c#
+@RenderSection("Javascript", required: false)
 
 ```
 
@@ -28,20 +38,59 @@
 1. First I grabbed the user input string, and sent it to the controller, and the controller returns the JSON data and we use Javascript to parse through the data and grab the specific url that we want to use to output to our page. 
 
 Create url to send:
-```js
 
+```js
+//gets the value of the user input
+var txt = $('#text-input').val();
+//get ths last item that is typed 
+var lastitem = txt.split(" ").pop();
+
+//routing it to my custome controller to send request 
+var source = "Translate/Sticker/" + txt; //Source
 ```
 
 Send the request and get JSON data back and return it to the js file:
 
 ```c#
+//Creates the URL for the search function using my own API
+string getURL = "https://api.giphy.com/v1/stickers/translate?api_key=" + apiKey + "&s=" + txt;
+
+//Makes a request to the URL and receives the responce
+WebRequest request = WebRequest.Create(getURL);
+WebResponse getResponce = request.GetResponse();
+
+Stream data = request.GetResponse().GetResponseStream();
+
+//Convert the response to a string 
+string convString = new StreamReader(data).ReadToEnd();
+
+//lets parse through the JSON ojbect that we received from the endpoint
+var serialize = new System.Web.Script.Serialization.JavaScriptSerializer();
+var jsonObj = serialize.DeserializeObject(convString);
+
+//Closing stream
+data.Close();
+getResponce.Close();
+
+//returns JSON obj result 
+return Json(jsonObj, JsonRequestBehavior.AllowGet);            
 
 ```
 
 Parse through it and grab the specific data that we want to output 
 
 ```js
+ if (notBoring(lastitem)) {
+                $.ajax({
+                    type: "GET",
+                    dataType: "json",
+                    data: { "txt": lastitem },
+                    url: source,
+                    success: showGifs,
+                    error: errorOnAjax
 
+                });
+            }
 ```
 
 ## Custom Routing 
@@ -50,7 +99,13 @@ Parse through it and grab the specific data that we want to output
 
 2. I added my own custom routing to the file, which leads takes the searching string to the controller and the action method that creates the request and receives the response 
 
-```html
+```c#
+  routes.MapRoute(
+               name: "Search",
+               url: "{controller}/{action}/{search}",
+               defaults: new { controller = "Translate", action = "Sticker",}
+           );
+        }
 
 ```
 
@@ -62,34 +117,78 @@ Parse through it and grab the specific data that we want to output
 Creating dB query:
 
 ```sql
+CREATE TABLE [dbo].[Log_Entry] (
+    [ID]            INT            IDENTITY (1, 1) NOT NULL,
+    [Request]		NVARCHAR (MAX) NOT NULL,
+    [IPAddress]		NVARCHAR (MAX) NOT NULL,
+	[ClientBrowser]	NVARCHAR (MAX) NOT NULL,
+    [AccessTime]    DATETIME       NULL,
 
+    CONSTRAINT [PK_dbo.Log_Entry] PRIMARY KEY CLUSTERED ([ID] ASC)
+	
+);
 
 ```
 Query to drop table:
 
 ```sql
 
-
+DROP TABLE [dbo].[Log_Entry];
 ```
 
-Model file:
+Snippet of Model file:
 
 ```c#
+public string Request { get; set; }
 
+/// <summary>
+/// IP address of the user
+/// </summary>
+public string IPAddress { get; set; }
+
+/// <summary>
+/// browser of  client 
+/// </summary>
+public string ClientBrowser { get; set; }
 ```
 
 Context file so that the controller can interact with the dB
 
 ```c#
+public LogDbContext() : base("name=Log_Entry")
+{
 
+}
+
+public virtual DbSet<LogEvent> Logs { get; set; }
 
 ```
 
 2. Then I initialized the context variable and started assigning the necessary information using the ```Request``` function which is part of the controller. 
 
 ```c#
+var dbContext = db.Logs.Create();
 
+//Assigns the time to the dB
+dbContext.AccessTime = DateTime.Now;
+
+//Getting the IP of the user
+dbContext.IPAddress = Request.UserHostAddress;
+
+//What the user searched for 
+dbContext.Request = txt;
+
+//What the client browser it 
+dbContext.ClientBrowser = Request.UserAgent;
+
+//Lets save the changes 
+db.Logs.Add(dbContext);
+db.SaveChanges();
 
 ```
 
 ## Working Pages 
+
+![Image](working1.PNG)
+
+![Image](working2.PNG)
