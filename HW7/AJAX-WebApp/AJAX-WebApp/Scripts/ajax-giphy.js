@@ -10,17 +10,19 @@
             e.preventDefault;
         }
 
+        //What to do when the space bar is pressed 
         function giphySearch()
         {
-
+            //gets the value of the user input
             var txt = $('#text-input').val();
+            //get ths last item that is typed 
             var lastitem = txt.split(" ").pop();
 
-            if (e.which === 32) {
-                var source = "Translate/Sticker/" + txt; //Source
-            }
+            //routing it to my custome controller to send request 
+            var source = "Translate/Sticker/" + txt; //Source
+           
             
-            //alert(urls);
+            //check if word it not boring, if not send request, if so just append the text to the view
             if (notBoring(lastitem)) {
                 $.ajax({
                     type: "GET",
@@ -38,7 +40,7 @@
             }
 
         }
-
+        //function to check if the word is something we want to gif
         function notBoring(word)
         {
 
@@ -54,6 +56,7 @@
 
         }
 
+        //lets show the gif on the page
         function showGifs(data)
         {
 
@@ -68,10 +71,12 @@
 
         }
 
+        //at button push the page reloads, or simply and ENTER key
         $('#reset').click(function () {
             location.reload();
         });
 
+        //if there is an error on the request
         function errorOnAjax()
         { 
             console.log("error");
