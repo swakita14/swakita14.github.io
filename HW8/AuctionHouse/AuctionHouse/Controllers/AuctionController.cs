@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using AuctionHouse.Models;
 using AuctionHouse.Models.DAL;
+using AuctionHouse.Models.ViewModels;
 
 namespace AuctionHouse.Controllers
 {
@@ -55,16 +57,32 @@ namespace AuctionHouse.Controllers
         // GET: Auction/Details/5
         public ActionResult Details(int? id)
         {
+            ViewBag.hasbids = false;
+            AuctionVM vm = new AuctionVM();
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Item item = db.Items.Find(id);
-            if (item == null)
+            vm.VmItem = db.Items.Find(id);
+            if (vm.VmItem == null)
             {
                 return HttpNotFound();
             }
-            return View(item);
+
+            if(vm.VmItem.Bids.Count() > 0)
+            {
+                ViewBag.hasbids = true;
+                int pid = vm.VmItem.Bids.FirstOrDefault().ID;
+                //vm.VMBid = vm.VmItem.Bids.SelectMany(x => x.ItemID == vm.VmItem.ID);
+
+            }
+
+            //vm.VMBid = db.Bids.Find(vm.VmItem.ID);
+            //Debug.WriteLine(vm.VMBid.Item);
+
+
+            return View(vm);
         }
 
         // GET: Auction/Create
