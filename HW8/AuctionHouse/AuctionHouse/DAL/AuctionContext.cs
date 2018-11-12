@@ -1,4 +1,4 @@
-namespace AuctionHouse.Models
+namespace AuctionHouse.Models.DAL
 {
     using System;
     using System.Data.Entity;

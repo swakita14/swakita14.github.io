@@ -11,6 +11,7 @@ namespace AuctionHouse.Models
     {
         public int ID { get; set; }
 
+        
         public int ItemID { get; set; }
 
         [Required]
@@ -19,7 +20,14 @@ namespace AuctionHouse.Models
 
         public int Price { get; set; }
 
-        public DateTime TimeStamp { get; set; }
+        private DateTime date = DateTime.Now;
+
+        public DateTime TimeStamp
+        {
+            get { return date; }
+            set { date = value; }
+        }
+
 
         public virtual Item Item { get; set; }
     }
