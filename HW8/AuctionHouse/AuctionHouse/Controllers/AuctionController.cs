@@ -15,6 +15,11 @@ namespace AuctionHouse.Controllers
     {
         private AuctionContext db = new AuctionContext();
 
+
+        public ActionResult HomePage()
+        {
+            return View();
+        }
         // GET: Auction
         public ActionResult Index()
         {
