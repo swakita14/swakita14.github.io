@@ -26,7 +26,7 @@
 
     function showBids(data) {
 
-        alert(data);
+        console.log(data);
 
     }
 

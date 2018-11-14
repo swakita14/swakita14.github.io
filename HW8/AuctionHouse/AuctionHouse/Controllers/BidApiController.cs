@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 
 namespace AuctionHouse.Controllers
 {
@@ -30,20 +31,17 @@ namespace AuctionHouse.Controllers
                                 .Where(i => i.ItemID == pid)
                                 .OrderBy(t => t.TimeStamp)
                                 .ToList();
-            
-                                    
+
+
             //Serialize the JSON data
-            string jsonItem = JsonConvert.SerializeObject(vm.VMBid);
-
-            Debug.WriteLine(vm.VMBid.Count);
-
-
+            var jsonSerialiser = new JavaScriptSerializer();
+            var jsonObj = jsonSerialiser.Serialize(vm.VMBid);
 
 
 
 
             //Send it back
-            return Json(jsonItem , JsonRequestBehavior.AllowGet);
+            return Json(jsonObj , JsonRequestBehavior.AllowGet);
         }
     }
 }
