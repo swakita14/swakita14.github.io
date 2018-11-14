@@ -11,7 +11,6 @@ namespace AuctionHouse.Models
     {
         public int ID { get; set; }
 
-        
         public int ItemID { get; set; }
 
         [Required]
@@ -28,7 +27,8 @@ namespace AuctionHouse.Models
             set { date = value; }
         }
 
-
         public virtual Item Item { get; set; }
+
+        public virtual Buyer Buyer1 { get; set; }
     }
 }

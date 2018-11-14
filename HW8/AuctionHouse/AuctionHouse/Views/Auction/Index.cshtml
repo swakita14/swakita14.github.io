@@ -3,8 +3,8 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
+<br />
+<h2>Current Items</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -12,10 +12,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Seller1.Name)
+            @Html.DisplayName("Seller Name")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayName("Item Name")
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Description)

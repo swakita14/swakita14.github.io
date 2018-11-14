@@ -1,4 +1,4 @@
-namespace AuctionHouse.Models.DAL
+namespace AuctionHouse.Models
 {
     using System;
     using System.Data.Entity;
@@ -19,6 +19,12 @@ namespace AuctionHouse.Models.DAL
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Buyer>()
+                .HasMany(e => e.Bids)
+                .WithRequired(e => e.Buyer1)
+                .HasForeignKey(e => e.Buyer)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<Item>()
                 .HasMany(e => e.Bids)
                 .WithRequired(e => e.Item)

@@ -8,7 +8,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using AuctionHouse.Models;
-using AuctionHouse.Models.DAL;
 using AuctionHouse.Models.ViewModels;
 
 namespace AuctionHouse.Controllers
@@ -32,6 +31,7 @@ namespace AuctionHouse.Controllers
         // GET: Bids/Create
         public ActionResult BidCreate()
         {
+            ViewBag.Buyer = new SelectList(db.Buyers, "Name", "Name");
             ViewBag.ItemID = new SelectList(db.Items, "ID", "Name");
             return View();
         }
@@ -50,6 +50,7 @@ namespace AuctionHouse.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.Buyer = new SelectList(db.Buyers, "Name", "Name", bid.Buyer);
             ViewBag.ItemID = new SelectList(db.Items, "ID", "Name", bid.ItemID);
             return View(bid);
         }
