@@ -17,31 +17,32 @@ namespace AuctionHouse.Controllers
         public JsonResult ItemBids(int? id)
         {
 
-            AuctionVM vm = new AuctionVM();
+            AuctionVM vm = new AuctionVM
+            {
+                //Find the Item with the id
+                VmItem = db.Items.Find(id)
+            };
 
-            //Find the Item with the id
-            vm.VmItem = db.Items.Find(id);
+            string jsonObj = "";
 
-            //Item ID that has a bid
-            int pid = vm.VmItem.Bids.FirstOrDefault().ItemID;
+            //Checks if the Item has a bid. 
+            if (vm.VmItem.Bids.Count > 0)
+            {
 
+                //Item ID that has a bid
+                int pid = vm.VmItem.Bids.FirstOrDefault().ItemID;
 
-            //Assign it to the bid
-            vm.VMBid = db.Items.SelectMany(x => x.Bids)
-                                .Where(i => i.ItemID == pid)
-                                .OrderBy(t => t.TimeStamp)
-                                .ToList();
+                //Assign it to the bid
+                vm.VMBid = db.Items.SelectMany(x => x.Bids)
+                                    .Where(i => i.ItemID == pid)
+                                    .OrderBy(t => t.TimeStamp)
+                                    .ToList();
 
-
-            //Serialize the JSON data
-            var jsonSerialiser = new JavaScriptSerializer();
-            var jsonObj = jsonSerialiser.Serialize(vm.VMBid);
-
-
-
+                jsonObj = JsonConvert.SerializeObject(vm.VMBid);
+            }
 
             //Send it back
-            return Json(jsonObj , JsonRequestBehavior.AllowGet);
+            return Json(jsonObj,JsonRequestBehavior.AllowGet);
         }
     }
 }

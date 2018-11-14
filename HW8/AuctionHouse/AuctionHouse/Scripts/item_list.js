@@ -5,24 +5,27 @@
     
     //alert(id);
 
-    var source = "/BidApi/ItemBids?=" + id;
+    function ajaxBids() {
 
-    
+        var source = "/BidApi/ItemBids?=" + id;
 
-        $.ajax({
-            type: "GET",
-            dataType: "json",
-            data: { "id": id },
-            url: source,
-            success: showBids,
-            error: errorOnAjax
+        var ajax_call = function () {
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                data: { "id": id },
+                url: source,
+                success: showBids,
+                error: errorOnAjax
 
-        });
+            });
+        };
 
+        var interval = 1000 * X; // where X is your timer interval in X seconds
 
-    //var interval = 1000 * 4; // where X is your timer interval in X seconds
+        window.setInterval(ajax_call, interval);
 
-    //window.setInterval(ajax_call, interval);
+    }
 
     function showBids(data) {
 

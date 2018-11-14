@@ -6,7 +6,7 @@
 
 <h2>Item Details</h2>
 
-<div>
+<div class="container">
     
     <hr />
     <input type="hidden" value="@Model.VmItem.ID" id="hidden-id" />
@@ -39,13 +39,37 @@
 
     </dl>
 
-        @if (ViewBag.hasbids)
-        {
-            <dl class="dl-horizontal" id="bid-section">
-
-            </dl>
-        }
 </div>
+
+<div class="container">
+
+   <h3>Current Bids</h3>
+
+    <table class="table">
+
+        <thead>
+
+            <tr>
+                <th>
+                    @Html.DisplayName("Buyer")
+                </th>
+                <th>
+                    @Html.DisplayName("Bid Price")
+                </th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="current-bid">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+
 
 
 
