@@ -63,3 +63,14 @@ In this weeks homework assignment, we created another MVC app using a pre-existi
 * [Demo Video](https://youtu.be/i8jkJDDin_c)
 
 * [Journal](https://swakita14.github.io/HW6/)
+
+### HW7:
+
+This week, our objective was to write a MVC web application that employs AJAX to build responisive views, learn how to use and existing external API to acquire data, serverside, and demonstrate the use of JSON, AJAX, and custom routing URLs.
+
+
+* [Source Code](https://github.com/swakita14/swakita14.github.io/tree/master/HW7)
+
+* [Demo Video](https://www.youtube.com/watch?v=gTv8FzgwHOo&t=1s)
+
+* [Journal](https://swakita14.github.io/HW7/)
