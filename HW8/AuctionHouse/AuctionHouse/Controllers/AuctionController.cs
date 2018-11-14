@@ -71,16 +71,6 @@ namespace AuctionHouse.Controllers
                 return HttpNotFound();
             }
 
-            if(vm.VmItem.Bids.Count() > 0)
-            {
-                ViewBag.hasbids = true;
-                int pid = vm.VmItem.Bids.FirstOrDefault().ID;
-                //vm.VMBid = vm.VmItem.Bids.SelectMany(x => x.ItemID == vm.VmItem.ID);
-
-            }
-
-            //vm.VMBid = db.Bids.Find(vm.VmItem.ID);
-            //Debug.WriteLine(vm.VMBid.Item);
 
 
             return View(vm);
