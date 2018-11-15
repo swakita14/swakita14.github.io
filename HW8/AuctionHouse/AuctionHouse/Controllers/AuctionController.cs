@@ -19,7 +19,10 @@ namespace AuctionHouse.Controllers
 
         public ActionResult HomePage()
         {
-            return View();
+            var bids = db.Bids.Take(10).OrderByDescending(x => x.TimeStamp);
+
+            return View(bids.ToList());
+
         }
         // GET: Auction
         public ActionResult Index()
@@ -58,20 +61,20 @@ namespace AuctionHouse.Controllers
         // GET: Auction/Details/5
         public ActionResult Details(int? id)
         {
-            ViewBag.hasbids = false;
-            AuctionVM vm = new AuctionVM();
-
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            vm.VmItem = db.Items.Find(id);
+
+            AuctionVM vm = new AuctionVM()
+            {
+                VmItem = db.Items.Find(id)
+            };
+
             if (vm.VmItem == null)
             {
                 return HttpNotFound();
             }
-
-
 
             return View(vm);
         }

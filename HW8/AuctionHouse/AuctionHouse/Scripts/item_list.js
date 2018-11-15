@@ -1,14 +1,13 @@
 ﻿$(document).ready(function () {
 
-  
+
     var id = document.getElementById("hidden-id").value;
+
     
-   
+  
+     var source = "/BidApi/ItemBids/" + id;
 
-
-
-     var source = "/BidApi/ItemBids?=" + id;
-        
+    console.log(source)
      var ajax_call = function () {
             $.ajax({
                 type: "GET",
@@ -21,13 +20,14 @@
             });
       };
 
-      var interval = 1000 * 3; // where X is your timer interval in X seconds
+      var interval = 1000 * 5; // where X is your timer interval in X seconds
 
        window.setInterval(ajax_call, interval);
 
     
 
     function showBids(data) {
+
 
         var bidList = "";
 

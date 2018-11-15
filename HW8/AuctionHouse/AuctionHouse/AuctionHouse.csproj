@@ -157,6 +157,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AuctionController.cs" />
     <Compile Include="Controllers\BidApiController.cs" />
+    <Compile Include="Controllers\BidsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -218,6 +219,11 @@
     <Content Include="Views\Auction\Index.cshtml" />
     <Content Include="Views\Auction\HomePage.cshtml" />
     <Content Include="Views\Auction\BidCreate.cshtml" />
+    <Content Include="Views\Bids\Create.cshtml" />
+    <Content Include="Views\Bids\Delete.cshtml" />
+    <Content Include="Views\Bids\Details.cshtml" />
+    <Content Include="Views\Bids\Edit.cshtml" />
+    <Content Include="Views\Bids\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\BidApi\" />

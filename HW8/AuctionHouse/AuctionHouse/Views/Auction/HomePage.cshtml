@@ -1,22 +1,21 @@
-﻿
+﻿@model IEnumerable<AuctionHouse.Models.Bid>
+
 @{
     ViewBag.Title = "HomePage";
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1 id="home-title">REGINALD'S ANCIENT ANTIQUITIES AUCTION HOUSE</h1>   
 </div>
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <h2>View Items</h2>
         <p>This is the list of items that are currenlty on the auction</p>
         <p><a class="btn btn-default" href="~/Auction/Index">View List &raquo;</a></p>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-6">
         <h2>Creating a Bid</h2>
         <p>
             Its time to create a Bid
@@ -24,5 +23,70 @@
         <p><a class="btn btn-default" href="~/Auction/BidCreate">Create Bid &raquo;</a></p>
     </div>
 
+
+
 </div>
+<br />
+<br />
+
+<div class="container">
+    <h3>Current Bids on All Items</h3>
+    <br />
+
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayName("Item ID")
+            </th>
+            <th>
+                @Html.DisplayName("Bidder Name")
+            </th>
+            <th>
+                @Html.DisplayName("Item Name")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayName("Bid Time")
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemID)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Buyer1.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Item.Name)
+                </td>
+                <td>
+                    @String.Format("{0:C}", item.Price)
+                </td>
+                <td>
+                    @if (item.TimeStamp.Date == DateTime.Now.Date)
+                    {
+                        @String.Format("{0:h:m:ss tt}", item.TimeStamp);
+                    }
+                    else
+                    {
+                        @String.Format("{0:M/d/yyyy}", item.TimeStamp);
+                    }
+                </td>
+
+            </tr>
+        }
+
+    </table>
+
+</div>
+
+
 
