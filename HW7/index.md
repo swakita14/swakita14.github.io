@@ -80,7 +80,7 @@ return Json(jsonObj, JsonRequestBehavior.AllowGet);
 Parse through it and grab the specific data that we want to output 
 
 ```js
- if (notBoring(lastitem)) {
+            if (!boring(lastitem)) {
                 $.ajax({
                     type: "GET",
                     dataType: "json",
@@ -90,7 +90,6 @@ Parse through it and grab the specific data that we want to output
                     error: errorOnAjax
 
                 });
-            }
 ```
 
 ## Custom Routing 

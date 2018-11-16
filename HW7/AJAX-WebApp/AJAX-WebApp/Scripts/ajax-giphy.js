@@ -23,7 +23,7 @@
            
             
             //check if word it not boring, if not send request, if so just append the text to the view
-            if (notBoring(lastitem)) {
+            if (!boring(lastitem)) {
                 $.ajax({
                     type: "GET",
                     dataType: "json",
@@ -41,18 +41,18 @@
 
         }
         //function to check if the word is something we want to gif
-        function notBoring(word)
+        function boring(word)
         {
 
-            var notBoringWords = ["cat", "lobster", "walking", "banana", "carrots", "running", "jumping", "dog", "moose", "apple", "walk" ];
-            var notBoring = false;
-            for (var i = 0; i < notBoringWords.length; i++) {
-                if (word === notBoringWords[i]) {
-                    notBoring = true;
+            var boringWords = ["a", "and", "the", "for", "is", "it", "so", "not"];
+            var boring = false;
+            for (var i = 0; i < boringWords.length; i++) {
+                if (word === boringWords[i]) {
+                    boring = true;
                 }
             }
 
-            return notBoring;
+            return boring;
 
         }
 
