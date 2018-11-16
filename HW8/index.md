@@ -8,6 +8,8 @@
 
 ## Multi-table
 
+1. We previously worked on creating a single table, but in this HW, we created a multitable that used not only primary keys, but foreign keys as well
+
 ## AJAX
 
 ## Working Page
