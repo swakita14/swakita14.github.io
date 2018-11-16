@@ -1,0 +1,85 @@
+﻿@model AuctionHouse.Models.ViewModels.AuctionVM
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Item Details</h2>
+
+<div class="container">
+    
+    <hr />
+    <input type="hidden" value="@Model.VmItem.ID" id="hidden-id" />
+    <dl class="dl-horizontal">
+        
+
+        <dt>
+            @Html.DisplayName("Seller Name:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VmItem.Seller1.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Item Name:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VmItem.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Description:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VmItem.Description)
+        </dd>
+
+    </dl>
+
+</div>
+
+<div class="container">
+
+   <h3>Current Bids</h3>
+
+    <table class="table">
+
+        <thead>
+
+            <tr>
+                <th>
+                    @Html.DisplayName("Buyer")
+                </th>
+                <th>
+                    @Html.DisplayName("Bid Price")
+                </th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="current-bid">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+
+
+
+
+@* Should Implement the bids coming live *@
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VmItem.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+@section myjs
+{
+    <script type="text/javascript" src="@Url.Content("/Scripts/item_list.js")"></script>
+}

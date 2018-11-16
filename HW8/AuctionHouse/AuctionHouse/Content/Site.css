@@ -22,3 +22,8 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#home-title {
+    text-align: center;
+    font-family: 'Spectral SC', serif;
+}
