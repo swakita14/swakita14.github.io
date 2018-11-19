@@ -23,18 +23,18 @@ namespace AuctionHouse.Models
                 .HasMany(e => e.Bids)
                 .WithRequired(e => e.Buyer1)
                 .HasForeignKey(e => e.Buyer)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
 
             modelBuilder.Entity<Item>()
                 .HasMany(e => e.Bids)
                 .WithRequired(e => e.Item)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
 
             modelBuilder.Entity<Seller>()
                 .HasMany(e => e.Items)
                 .WithRequired(e => e.Seller1)
                 .HasForeignKey(e => e.Seller)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
         }
     }
 }

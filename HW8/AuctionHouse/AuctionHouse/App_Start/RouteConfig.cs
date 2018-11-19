@@ -18,6 +18,12 @@ namespace AuctionHouse
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Auction", action = "HomePage", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Search",
+                url: "{controller}/{action}/{search}",
+                defaults: new { controller = "BidApi", action = "ItemBids", }
+             );
         }
     }
 }
