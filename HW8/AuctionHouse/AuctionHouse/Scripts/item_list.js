@@ -30,17 +30,18 @@
 
 
         var bidList = "";
+        if (data !== null) {
+            $.each(JSON.parse(data), function (key, item) {
 
-        $.each(JSON.parse(data), function (key, item) {
+                console.log(item.Buyer);
 
-            console.log(item.Buyer);
+                bidList += '<tr>';
+                bidList += '<td>' + item.Buyer + '</td>';
+                bidList += '<td>' + "$" + item.Price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') + '</td>';
+                bidList += '<tr>';
 
-            bidList += '<tr>';
-            bidList += '<td>' + item.Buyer + '</td>';
-            bidList += '<td>' + "$" + item.Price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') + '</td>';
-            bidList += '<tr>';
-
-        });
+            });
+        }
 
         $('#current-bid').html(bidList);
 

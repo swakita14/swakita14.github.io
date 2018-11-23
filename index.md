@@ -74,3 +74,14 @@ This week, our objective was to write a MVC web application that employs AJAX to
 * [Demo Video](https://www.youtube.com/watch?v=gTv8FzgwHOo&t=1s)
 
 * [Journal](https://swakita14.github.io/HW7/)
+
+### HW8:
+
+For this homework we created a MVC Application that uses multi-table, relational database instance. We added CRUD (Create, Read, Update, Delete) functionality to the list of items. We used AJAX to show the current bids on the item, with a time interval set. Finally we wrote LINQ queries to show the top 10 bids, ordered by timestamp. 
+
+
+* [Source Code](https://github.com/swakita14/swakita14.github.io/tree/master/HW8)
+
+* [Demo Video](https://youtu.be/FEwZx4af7WM)
+
+* [Journal](https://swakita14.github.io/HW8/)

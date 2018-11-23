@@ -17,6 +17,7 @@ namespace AuctionHouse.Models
         [StringLength(30)]
         public string Buyer { get; set; }
 
+        [Range(0, int.MaxValue, ErrorMessage = "Price must be a positive number")]
         public int Price { get; set; }
 
         private DateTime date = DateTime.Now;
