@@ -85,3 +85,12 @@ For this homework we created a MVC Application that uses multi-table, relational
 * [Demo Video](https://youtu.be/FEwZx4af7WM)
 
 * [Journal](https://swakita14.github.io/HW8/)
+
+### HW9:
+
+In this Homework, we will grab the previous HW (Multi-table MVC-Web Applcation) and deploy it to Azure. It includes all the steps I took in detail to help me deploy my web application to Azure
+
+
+* [Source Code](https://github.com/swakita14/swakita14.github.io/tree/master/HW9)
+
+* [Journal](https://swakita14.github.io/HW9/)
