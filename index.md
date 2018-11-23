@@ -93,4 +93,8 @@ In this Homework, we will grab the previous HW (Multi-table MVC-Web Applcation) 
 
 * [Source Code](https://github.com/swakita14/swakita14.github.io/tree/master/HW9)
 
+* [Live Site](https://cs-460-hw9.azurewebsites.net)
+
 * [Journal](https://swakita14.github.io/HW9/)
+
+
