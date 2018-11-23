@@ -2,6 +2,9 @@
 
 * [Demo Video](https://youtu.be/FEwZx4af7WM)
 
+* [Demo Video2](https://youtu.be/xqBu1I_4BAk)
+
+
 ![E-RDiagram](er.png)
 
 ## HW Overview
