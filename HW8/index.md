@@ -1,9 +1,6 @@
 # HW8
 
-* [Demo Video](https://youtu.be/FEwZx4af7WM)
-
-* [Demo Video2](https://youtu.be/xqBu1I_4BAk)
-
+* [Demo Video](https://youtu.be/i68nfopZb_I)
 
 ![E-RDiagram](er.png)
 
