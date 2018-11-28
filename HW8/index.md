@@ -1,6 +1,6 @@
 # HW8
 
-* [Demo Video](https://vimeo.com/user92245512/review/303391518/680b5c26e8)
+* [Demo Video](https://drive.google.com/file/d/1ZOrxsmHbXGx5mhjUNeu3I3KiRL4dIktr/view?usp=sharing)
 
 ![E-RDiagram](er.png)
 
