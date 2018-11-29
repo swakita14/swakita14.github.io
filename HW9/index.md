@@ -68,7 +68,7 @@ In this Homework, we will grab the previous HW (Multi-table MVC-Web Applcation) 
 
 ## Create Web App on Azure and configure connection string
 
-![AppService1](pic9.PNG)
+![AppService1](pics9.PNG)
 
 1. Once all the steps on the top are done, we want to create a appservice, and same as the db, and db server, we want to create it in the same resource group.
 
