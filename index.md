@@ -82,7 +82,7 @@ For this homework we created a MVC Application that uses multi-table, relational
 
 * [Source Code](https://github.com/swakita14/swakita14.github.io/tree/master/HW8)
 
-* [Demo Video](https://youtu.be/FEwZx4af7WM)
+* [Demo Video](https://drive.google.com/file/d/1ZOrxsmHbXGx5mhjUNeu3I3KiRL4dIktr/view?usp=sharing)
 
 * [Journal](https://swakita14.github.io/HW8/)
 
@@ -92,6 +92,8 @@ In this Homework, we will grab the previous HW (Multi-table MVC-Web Applcation) 
 
 
 * [Source Code](https://github.com/swakita14/swakita14.github.io/tree/master/HW9)
+
+* [Demo Video](https://drive.google.com/file/d/1ZOrxsmHbXGx5mhjUNeu3I3KiRL4dIktr/view?usp=sharing)
 
 * [Live Site](https://cs-460-hw9.azurewebsites.net)
 
