@@ -2,7 +2,7 @@
 
 * [Demo Video](https://drive.google.com/file/d/1ZOrxsmHbXGx5mhjUNeu3I3KiRL4dIktr/view?usp=sharing)
 
-![E-RDiagram](er.png)
+![E-RDiagram](er.PNG)
 
 ## HW Overview
 
