@@ -28,22 +28,16 @@
 
     function showBids(data) {
 
-
-        var bidList = "";
+        $('#myTable').find('tbody').empty();
         if (data !== null) {
             $.each(JSON.parse(data), function (key, item) {
 
-                console.log(item.Buyer);
-
-                bidList += '<tr>';
-                bidList += '<td>' + item.Buyer + '</td>';
-                bidList += '<td>' + "$" + item.Price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') + '</td>';
-                bidList += '<tr>';
+                var bidData = '<tr><td>' + item.Buyer + '</td ><td>$' + item.Price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') + '</td></tr>';
+                $('#myTable').find('tbody').append(bidData);
 
             });
+            
         }
-
-        $('#current-bid').html(bidList);
 
     }
 
