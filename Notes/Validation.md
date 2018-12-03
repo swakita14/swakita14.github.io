@@ -13,3 +13,9 @@
       public DateTime BirthDate { get; set; } 
 
 ```
+
+```c#
+ [Range(0, Double.PositiveInfinity)]
+[Range(0.0, Double.MaxValue)]
+
+```
