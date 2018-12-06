@@ -1,0 +1,45 @@
+﻿@model IEnumerable<cs_Final_part2.Models.Crew>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Astronaut1.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mission1.Designation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Position)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Astronaut1.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mission1.Designation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Position)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CrewID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CrewID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CrewID })
+        </td>
+    </tr>
+}
+
+</table>

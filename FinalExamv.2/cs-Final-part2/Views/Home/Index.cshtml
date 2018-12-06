@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Awesome Astronauts: Mission Tracker</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Wanting to Make a Crew?</h2>
+        <p>
+            Let's do this!
+        </p>
+        <p><a class="btn btn-default" href="~/Crews/Create">Make a Crew Assignment &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Who Went on What Mission?</h2>
+            @Html.DropDownList("Mission", null, htmlAttributes: new { @class = "form-control", id ="selectList"})
+    </div>
+        
+    <div class="col-md-4">
+        <h2>Mission</h2>
+        <table class="table" id="astronaut-tables">
+            <thead>
+                <tr>
+                    <th>
+                        Names
+                    </th>
+                    <th>
+                        Nationality
+                    </th>
+                </tr>
+            </thead>
+            
+            <tbody class="tbody"></tbody>
+        </table>
+    </div>
+</div>
+
+@section myjs
+{
+    <script type="text/javascript" src="@Url.Content("/Scripts/AJAX.js")"></script>
+}
