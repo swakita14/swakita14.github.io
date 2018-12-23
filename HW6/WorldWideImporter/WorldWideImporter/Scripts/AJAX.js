@@ -18,7 +18,7 @@
 
 
             //routing it to my custome controller to send request 
-            var source = "AJAX/Search/" + txt; //Source
+            var source = "AJAX/Search/" + lastitem; //Source
 
 
             //check if word it not boring, if not send request, if so just append the text to the view

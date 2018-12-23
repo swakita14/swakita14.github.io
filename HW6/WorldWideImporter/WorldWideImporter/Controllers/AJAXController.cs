@@ -23,7 +23,7 @@ namespace WorldWideImporter.Controllers
             Debug.WriteLine(name);
             
 
-            var jsonObj = db.People.Where(p => p.FullName.Contains(name)).ToList();
+            var jsonObj = db.People.Where(p => p.FullName.Contains(name));
 
 
             return Json(jsonObj, JsonRequestBehavior.AllowGet);
