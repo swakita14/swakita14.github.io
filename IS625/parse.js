@@ -7,7 +7,13 @@ $(document).ready(function(){
 
     /** Reader has finished loading and reading the file  */
     reader.onload = function(){
-      console.log(reader.result);
+
+      /** Processing and parsing CSV file */
+      const lines = reader.result.split('\n').map(function (line){
+        return line.split(',')
+      })
+
+      console.log(lines);
     }
     reader.readAsText(input.files[0])
 
