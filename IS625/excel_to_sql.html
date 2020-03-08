@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-    <title>Cover Template for Bootstrap</title>
+    <title>CSV Converter</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/cover/">
 
@@ -25,6 +25,9 @@
 
     <!-- Js file for parsing input -->
     <script type="text/javascript" src="parse.js"></script>
+
+    <!-- Js file for download -->
+    <script type="text/javascript" src="download.js"></script>
     
   </head>
 
@@ -50,8 +53,9 @@
               <label class="custom-file-label" for="customFile">Choose file</label>
             </div>
           </form>
+          <div class="output"></div>
           <br>
-        <p class="lead">*Please make sure that the file is an .xlxs file type*</p>
+        <p class="lead">*Please make sure that the file is an .csv file type*</p>
       </main>
 
       <footer class="mastfoot mt-auto">
