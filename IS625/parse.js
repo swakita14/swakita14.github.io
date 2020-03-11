@@ -1,14 +1,14 @@
 
 $(document).ready(function(){
 
+  // Making file name a global variable
   var fileName = ""
 
+  // Async method to show uploaded file name 
   $(".custom-file-input").on("change", function() {
     fileName = $(this).val().split("\\").pop();
     $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
   });
-
-    
 
     // Get the input from the UI, parse action happens on change 
     var input = document.querySelector('input[type="file"]');
@@ -30,6 +30,7 @@ $(document).ready(function(){
       // Iterate through each line
       for (var count = 0; count < lines.length; count ++){
 
+        // First row is the table so use it as is 
         if(count == 0){
           lineContent +="INSERT INTO dbo." + fileName.split('.').slice(0,-1).join('.') + "("
 
@@ -44,7 +45,9 @@ $(document).ready(function(){
           lineContent += ") VALUES"
         }
 
+        // Second Row on is the actual values 
         if(count > 0){
+
         // Add the starting parenthesis
         lineContent += "("
 
@@ -69,10 +72,10 @@ $(document).ready(function(){
       lineContent +=";"
 
       // Here for testing purpose
-      console.log(lineContent);
+      //console.log(lineContent);
 
-      // Automatically download the file 
-      //download(lineContent, "seedScript.sql" , "text/plain" );
+      //Automatically download the file 
+      download(lineContent, fileName.split('.').slice(0,-1).join('.') + ".sql" , "text/plain" );
 
     }
 
