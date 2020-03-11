@@ -1,6 +1,15 @@
 
 $(document).ready(function(){
 
+  var fileName = ""
+
+  $(".custom-file-input").on("change", function() {
+    fileName = $(this).val().split("\\").pop();
+    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+  });
+
+    
+
     // Get the input from the UI, parse action happens on change 
     var input = document.querySelector('input[type="file"]');
     input.addEventListener('change', function(e){
@@ -21,6 +30,21 @@ $(document).ready(function(){
       // Iterate through each line
       for (var count = 0; count < lines.length; count ++){
 
+        if(count == 0){
+          lineContent +="INSERT INTO dbo." + fileName.split('.').slice(0,-1).join('.') + "("
+
+          var tableName = lines[0].split(",")
+  
+          for (var i = 0; i < tableName.length; i ++){
+            lineContent += tableName[i] + ",";
+          }
+
+          lineContent = lineContent.slice(0, -1)
+  
+          lineContent += ") VALUES"
+        }
+
+        if(count > 0){
         // Add the starting parenthesis
         lineContent += "("
 
@@ -37,18 +61,18 @@ $(document).ready(function(){
 
         // Closing the line
         lineContent += "),"
-
-        
+        }    
       }
 
       // Remove last data since it was blank
       lineContent = lineContent.slice(0, -7);
+      lineContent +=";"
 
       // Here for testing purpose
       console.log(lineContent);
 
       // Automatically download the file 
-      download(lineContent, "seedScript.sql" , "text/plain" );
+      //download(lineContent, "seedScript.sql" , "text/plain" );
 
     }
 

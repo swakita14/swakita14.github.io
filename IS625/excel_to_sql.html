@@ -20,9 +20,6 @@
     <!-- Custom styles for this template -->
     <link href="layout.css" rel="stylesheet">
 
-    <!-- Js file for file input -->
-    <script type="text/javascript" src="file_input.js"></script>
-
     <!-- Js file for parsing input -->
     <script type="text/javascript" src="parse.js"></script>
 
@@ -62,6 +59,13 @@
         <div class="inner">
           <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
         </div>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_donations" />
+          <input type="hidden" name="business" value="shionwakita@gmail.com" />
+          <input type="hidden" name="currency_code" value="USD" />
+          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+          <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+          </form>
       </footer>
     </div>
   </body>
