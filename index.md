@@ -1,6 +1,6 @@
 # Hello, I am Shion Wakita
 
-![cover_photo](https://github.com/swakita14/swakita14.github.io/blob/master/test_img.jpg)
+![cover_photo](test_img.jpg)
 
 *Who am I?*
 > I am an aspiring software developer who has completed the undergraduate journey at Western Oregon University with a major in [Computer Science](https://wou.edu/cs/degrees-programs/babs-computer-science/) and a minor in Economics. Worked with developing multiple web applications with a focus in ASP.NET full stack framework. 
