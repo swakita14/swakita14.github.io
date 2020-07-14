@@ -11,8 +11,8 @@
 *What have I worked on in the past?*
 * [ASP.NET Course Work](https://swakita14.github.io/CS460.html)
 * [Senior Capstone Project](https://bitbucket.org/shaynaconner/scrumlords/src/master/)
-* [Current M&IS Portfolio](https://swakita14.github.io/M&IS/)  - In Progress
-* [Personal Projects]() 
+* [Current M&IS Portfolio](https://github.com/swakita14/swakita14.github.io/tree/master/M%26IS)  - In Progress
+* [Personal Projects](https://swakita14.github.io/personalprojects.html) 
 
 *Ways to contact me?*
 * Personal Email: shionwakita@gmail.com
